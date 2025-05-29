@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: backend-store
+    runtime: node
+    region: oregon
+    branch: main
+    rootDir: .
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: DB_USER
+        value: {{ env.DB_USER }}
+      - key: DB_PASS
+        value: {{ env.DB_PASS }}
+      - key: DB_HOST
+        value: {{ env.DB_HOST }}
+      - key: DB_NAME
+        value: {{ env.DB_NAME }}
+      - key: collection_Users
+        value: {{ env.collection_Users }}
+      - key: collection_Products
+        value: {{ env.collection_Products }}
+      - key: collection_Orders
+        value: {{ env.collection_Orders }}
+      - key: collection_Categories
+        value: {{ env.collection_Categories }}
+      - key: collection_Cliente
+        value: {{ env.collection_Cliente }}
+      - key: collection_Stats
+        value: {{ env.collection_Stats }}
+      - key: collection_Sales
+        value: {{ env.collection_Sales }}
+      - key: CRYPTO_SECRET_KEY
+        value: {{ env.CRYPTO_SECRET_KEY }}
+      - key: PORT
+        value: {{ env.PORT }}
+    healthCheckPath: /api/test
