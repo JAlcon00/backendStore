@@ -9,7 +9,8 @@ export interface IArticulo {
     precio: number;
     stock: number;
     categoria: ObjectId;
-    imagenUrl?: string;
+    imagenUrl?: string; // compatibilidad retro
+    imagenes?: string[]; // NUEVO: array de URLs o rutas
     fechaCreacion: Date;
     activo: boolean;
 }

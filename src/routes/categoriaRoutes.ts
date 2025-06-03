@@ -8,6 +8,8 @@ import {
     actualizarCategoria,
     eliminarCategoria
 } from "../controllers/categoriaController";
+import { validateBody } from '../middleware/validate';
+import { createCategoriaSchema, updateCategoriaSchema } from '../schemas/categoriaSchemas';
 
 const router = Router();
 
@@ -22,7 +24,7 @@ const router = Router();
  *       201:
  *         description: Categoría creada exitosamente
  */
-router.post('/', crearCategoria);
+router.post('/', validateBody(createCategoriaSchema), crearCategoria);
 
 /**
  * @swagger
@@ -73,7 +75,7 @@ router.get('/:id', obtenerCategoriaById);
  *       404:
  *         description: Categoría no encontrada
  */
-router.put('/:id', actualizarCategoria);
+router.put('/:id', validateBody(updateCategoriaSchema), actualizarCategoria);
 
 /**
  * @swagger

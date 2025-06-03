@@ -9,6 +9,8 @@ import {
     actualizarPedido,
     eliminarPedido
 } from '../controllers/pedidoController';
+import { validateBody } from '../middleware/validate';
+import { createPedidoSchema, updatePedidoSchema } from '../schemas/pedidoSchemas';
 
 const router = Router();
 
@@ -21,7 +23,7 @@ const router = Router();
  *       201:
  *         description: Pedido creado exitosamente
  */
-router.post('/', crearPedido);
+router.post('/', validateBody(createPedidoSchema), crearPedido);
 
 /**
  * @swagger
@@ -110,7 +112,7 @@ router.put('/:id/estado', actualizarEstadoPedido);
  *       404:
  *         description: Pedido no encontrado
  */
-router.put('/:id', actualizarPedido);
+router.put('/:id', validateBody(updatePedidoSchema), actualizarPedido);
 
 /**
  * @swagger

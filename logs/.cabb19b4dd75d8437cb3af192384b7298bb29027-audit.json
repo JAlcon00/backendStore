@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/jesusalmanza/Library/Mobile Documents/com~apple~CloudDocs/Escuela/Cuarto semestre/01 Desarrollo integral para aplicaciones empresariales/ServerXWeb/Proyecto/backend/logs/.cabb19b4dd75d8437cb3af192384b7298bb29027-audit.json",
+    "files": [
+        {
+            "date": 1748970057299,
+            "name": "/Users/jesusalmanza/Library/Mobile Documents/com~apple~CloudDocs/Escuela/Cuarto semestre/01 Desarrollo integral para aplicaciones empresariales/ServerXWeb/Proyecto/backend/logs/error-2025-06-03.log",
+            "hash": "71a70048909a13b3056907bd0c5629e3c51349f167661cd55474519909195587"
+        }
+    ],
+    "hashType": "sha256"
+}

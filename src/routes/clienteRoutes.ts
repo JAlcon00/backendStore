@@ -8,6 +8,8 @@ actualizarCliente,
 eliminarCliente,
 buscarClientesPorNombre
 } from "../controllers/clienteController";
+import { validateBody } from '../middleware/validate';
+import { createClienteSchema, updateClienteSchema } from '../schemas/clienteSchemas';
 
 const router = Router();
 
@@ -22,7 +24,7 @@ const router = Router();
  *       400:
  *         description: Error de validación o email duplicado
  */
-router.post("/", crearCliente);
+router.post("/", validateBody(createClienteSchema), crearCliente);
 
 /**
  * @swagger
@@ -73,7 +75,7 @@ router.get("/:id", obtenerClientePorId);
  *       404:
  *         description: Cliente no encontrado
  */
-router.put("/:id", actualizarCliente);
+router.put("/:id", validateBody(updateClienteSchema), actualizarCliente);
 
 /**
  * @swagger

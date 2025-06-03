@@ -9,6 +9,11 @@ import {
     buscarArticulosPorNombre,
     obtenerArticulosDestacados
 } from "../controllers/articuloController";
+import { validateBody } from '../middleware/validate';
+import { createArticuloSchema, updateArticuloSchema } from '../schemas/articuloSchemas';
+import multer from 'multer';
+import path from 'path';
+import { Request, Response } from 'express';
 
 const router = Router();
 
@@ -17,11 +22,42 @@ const router = Router();
  * /api/articulos:
  *   post:
  *     summary: Crear un nuevo artículo
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nombre:
+ *                 type: string
+ *               descripcion:
+ *                 type: string
+ *               precio:
+ *                 type: number
+ *               stock:
+ *                 type: integer
+ *               categoria:
+ *                 type: string
+ *               imagenes:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                   format: uri
+ *                 description: URLs de imágenes del producto
+ *               activo:
+ *                 type: boolean
+ *             required:
+ *               - nombre
+ *               - descripcion
+ *               - precio
+ *               - stock
+ *               - categoria
  *     responses:
  *       201:
  *         description: Artículo creado exitosamente
  */
-router.post("/", crearArticulo);
+router.post("/", validateBody(createArticuloSchema), crearArticulo);
 
 /**
  * @swagger
@@ -66,13 +102,38 @@ router.get("/:id", obtenerArticuloById);
  *         schema:
  *           type: string
  *         description: ID del artículo
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nombre:
+ *                 type: string
+ *               descripcion:
+ *                 type: string
+ *               precio:
+ *                 type: number
+ *               stock:
+ *                 type: integer
+ *               categoria:
+ *                 type: string
+ *               imagenes:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *                   format: uri
+ *                 description: URLs de imágenes del producto
+ *               activo:
+ *                 type: boolean
  *     responses:
  *       200:
  *         description: Artículo actualizado exitosamente
  *       404:
  *         description: Artículo no encontrado
  */
-router.put("/:id", actualizarArticulo);
+router.put('/:id', validateBody(updateArticuloSchema), actualizarArticulo);
 
 /**
  * @swagger
@@ -140,5 +201,65 @@ router.get("/nombre/:nombre", buscarArticulosPorNombre);
  *         description: Lista de artículos destacados
  */
 router.get("/destacados", obtenerArticulosDestacados);
+
+// Configuración de almacenamiento para imágenes
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../../uploads/articulos'));
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + '-' + file.originalname);
+  }
+});
+const upload = multer({
+  storage,
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (!allowedTypes.includes(file.mimetype)) {
+      return cb(new Error('Solo se permiten imágenes JPG, JPEG o PNG'));
+    }
+    cb(null, true);
+  },
+  limits: { fileSize: 5 * 1024 * 1024 } // 5MB
+});
+
+/**
+ * @swagger
+ * /api/articulos/upload:
+ *   post:
+ *     summary: Subir una imagen de artículo
+ *     consumes:
+ *       - multipart/form-data
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               imagen:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       200:
+ *         description: Imagen subida exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 url:
+ *                   type: string
+ *                   description: URL de la imagen subida
+ */
+router.post('/upload', upload.single('imagen'), (req: Request, res: Response): void => {
+  if (!req.file) {
+    res.status(400).json({ error: 'No se subió ninguna imagen o el formato/tamaño es inválido' });
+    return;
+  }
+  const url = `/uploads/articulos/${req.file.filename}`;
+  res.json({ url });
+});
 
 export default router;

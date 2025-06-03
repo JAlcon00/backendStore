@@ -2,6 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import logger from './utils/logger';
 import expressWinston from 'express-winston';
 import cors from 'cors';
+import path from 'path';
+import fs from 'fs';
 import {
   connectDB,
   closeDB,
@@ -37,6 +39,7 @@ app.use(expressWinston.logger({
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 app.use(cors({ origin: FRONTEND_URL }));
 app.use(express.json());
+app.use('/uploads/articulos', express.static(path.join(__dirname, '../uploads/articulos')));
 
 // Swagger
 setupSwagger(app);
@@ -77,7 +80,24 @@ app.get('/api/test', async (req, res) => {
 // Inicialización del servidor
 async function iniciarServidor() {
   try {
+    // Crear carpeta de uploads si no existe
+    const uploadsDir = path.join(__dirname, '../uploads/articulos');
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+
     await connectDB();
+    // Crear índices si no existen
+    logger.info('🔧 Creando índices en colecciones...');
+    await getUsuariosCollection().then(col => col.createIndex({ email: 1 }, { unique: true }));
+    await getClienteCollection().then(col => col.createIndex({ email: 1 }, { unique: true }));
+    await getArticulosCollection().then(col => col.createIndex({ nombre: 1 }));
+    await getCategoriasCollection().then(col => col.createIndex({ nombre: 1 }));
+    await getPedidosCollection().then(col => Promise.all([
+      col.createIndex({ usuario: 1 }),
+      col.createIndex({ estado: 1 }),
+      col.createIndex({ fechaCreacion: -1 })
+    ]));
     // Verificar acceso a colecciones
     logger.info('🔍 Probando conexión a colecciones…');
     await getUsuariosCollection().then(() => logger.info('📂 Colección Usuarios OK'));

@@ -12,7 +12,6 @@ import {
 } from "../controllers/usuarioController";
 import { loginLimiter } from "../middleware/rateLimiter";
 import { validateBody } from "../middleware/validate";
-import { authenticate, authorize } from "../middleware/auth";
 import { createUserSchema, loginSchema, updateUserSchema, changePasswordSchema } from "../schemas/usuarioSchemas";
 
 const router = Router();
@@ -39,7 +38,7 @@ router.post("/", validateBody(createUserSchema), crearUsuario);
  *       200:
  *         description: Lista de usuarios
  */
-router.get("/", authenticate, authorize(['admin']), obtenerUsuarios);
+router.get("/", obtenerUsuarios);
 
 // Rutas de búsqueda
 
@@ -59,7 +58,7 @@ router.get("/", authenticate, authorize(['admin']), obtenerUsuarios);
  *       200:
  *         description: Lista de usuarios con el nombre especificado
  */
-router.get("/buscar", authenticate, authorize(['admin']), buscarUsuariosPorNombre);
+router.get("/buscar", buscarUsuariosPorNombre);
 
 /**
  * @swagger
@@ -77,7 +76,7 @@ router.get("/buscar", authenticate, authorize(['admin']), buscarUsuariosPorNombr
  *       200:
  *         description: Lista de usuarios con el rol especificado
  */
-router.get("/rol/:rol", authenticate, authorize(['admin']), buscarUsuariosPorRol);
+router.get("/rol/:rol", buscarUsuariosPorRol);
 
 // Ruta para obtener usuario por ID (debe ir después de las rutas anteriores)
 
@@ -99,7 +98,7 @@ router.get("/rol/:rol", authenticate, authorize(['admin']), buscarUsuariosPorRol
  *       404:
  *         description: Usuario no encontrado
  */
-router.get("/:id", authenticate, authorize(['admin','cliente']), obtenerUsuariobyId);
+router.get("/:id", obtenerUsuariobyId);
 
 /**
  * @swagger
@@ -119,7 +118,7 @@ router.get("/:id", authenticate, authorize(['admin','cliente']), obtenerUsuariob
  *       404:
  *         description: Usuario no encontrado
  */
-router.put("/:id", authenticate, authorize(['admin','cliente']), validateBody(updateUserSchema), actualizarUsuario);
+router.put("/:id", validateBody(updateUserSchema), actualizarUsuario);
 
 /**
  * @swagger
@@ -139,7 +138,7 @@ router.put("/:id", authenticate, authorize(['admin','cliente']), validateBody(up
  *       404:
  *         description: Usuario no encontrado
  */
-router.delete("/:id", authenticate, authorize(['admin']), eliminarUsuario);
+router.delete("/:id", eliminarUsuario);
 
 /**
  * @swagger
@@ -172,6 +171,6 @@ router.post("/login", loginLimiter, validateBody(loginSchema), loginUsuario);
  *       404:
  *         description: Usuario no encontrado
  */
-router.post("/:id/cambiar-password", authenticate, authorize(['admin','cliente']), validateBody(changePasswordSchema), cambiarPassword);
+router.post("/:id/cambiar-password", validateBody(changePasswordSchema), cambiarPassword);
 
 export default router;

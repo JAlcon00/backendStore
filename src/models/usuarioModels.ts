@@ -1,6 +1,7 @@
 import { ObjectId } from 'mongodb';
 import { getUsuariosCollection } from '../config/db.config';
 import bcrypt from 'bcrypt';
+import { encryptData, decryptData } from '../utils/crypto';
 
 const SALT_ROUNDS = 12; 
 
@@ -21,26 +22,30 @@ export class UsuarioModel {
     // Crear un nuevo usuario
     static async crear(usuario: Omit<IUsuario, '_id' | 'fechaCreacion' | 'activo'>): Promise<IUsuario> {
         console.log('[UsuarioModel] Conectando a la colección: Usuario');
-         const collection = await getUsuariosCollection();
-         
-         // Verificar si el email ya existe
-         const existeEmail = await collection.findOne({ email: usuario.email });
-         if (existeEmail) {
-             throw new Error('El email ya está registrado');
-         }
+        const collection = await getUsuariosCollection();
+        
+        // Verificar si el email ya existe
+        const existeEmail = await collection.findOne({ email: usuario.email });
+        if (existeEmail) {
+            throw new Error('El email ya está registrado');
+        }
 
         // Encriptar contraseña
         const hashPassword = await bcrypt.hash(usuario.password, SALT_ROUNDS);
+        // Cifrar dirección
+        const direccionCifrada = encryptData(usuario.direccion);
         
         const nuevoUsuario = {
             ...usuario,
             password: hashPassword,
+            direccion: direccionCifrada,
             fechaCreacion: new Date(),
             activo: true
         };
         
         const resultado = await collection.insertOne(nuevoUsuario);
-        return { ...nuevoUsuario, _id: resultado.insertedId } as IUsuario;
+        // Devolver usuario con dirección descifrada
+        return { ...nuevoUsuario, direccion: usuario.direccion, _id: resultado.insertedId } as IUsuario;
     }
 
     // Obtener todos los usuarios activos
@@ -55,10 +60,11 @@ export class UsuarioModel {
         console.log('[UsuarioModel] Conectando a la colección: Usuario');
          const collection = await getUsuariosCollection();
          try {
-             return collection.findOne({ 
-                 _id: new ObjectId(id), 
-                 activo: true 
-             }) as Promise<IUsuario | null>;
+             const usuario = await collection.findOne({ _id: new ObjectId(id), activo: true });
+             if (!usuario) return null;
+             // Descifrar dirección
+             usuario.direccion = decryptData(usuario.direccion);
+             return usuario as IUsuario;
          } catch (error) {
              throw new Error('ID de usuario inválido');
          }
