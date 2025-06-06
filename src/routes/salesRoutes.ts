@@ -1,6 +1,7 @@
 // backend/src/routes/salesRoutes.ts
 import { Router } from 'express';
 import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido, getVentasRealizadas } from '../controllers/salesController';
+import { getVentasPorPedido, getVentasPorUsuario, getVentasPorFecha, getVentasPorPedidoYUsuario } from '../controllers/salesController';
 
 const router = Router();
 
@@ -74,5 +75,60 @@ router.post('/realizadas', async (req, res) => {
         res.status(500).json({ message: 'Error al obtener las ventas realizadas', error });
     }
 });
+
+/**
+ * @swagger
+ * /api/sales/usuario/{usuarioId}:
+ *   get:
+ *     summary: Obtener ventas por usuario
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Ventas por usuario obtenidas exitosamente
+ */
+router.get('/usuario/:usuarioId', getVentasPorUsuario);
+
+/**
+ * @swagger
+ * /api/sales/fecha/{fecha}:
+ *   get:
+ *     summary: Obtener ventas por fecha
+ *     parameters:
+ *       - in: path
+ *         name: fecha
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Ventas por fecha obtenidas exitosamente
+ */
+router.get('/fecha/:fecha', getVentasPorFecha);
+
+/**
+ * @swagger
+ * /api/sales/{pedidoId}:
+ *   get:
+ *     summary: Obtener ventas por pedido
+ *     parameters:
+ *       - in: path
+ *         name: pedidoId
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Ventas por pedido obtenidas exitosamente
+ */
+router.get('/:pedidoId', getVentasPorPedido);
+
+router.get('/pedido-usuario/:pedidoId/:usuarioId', getVentasPorPedidoYUsuario);
+
+
 export default router;
 

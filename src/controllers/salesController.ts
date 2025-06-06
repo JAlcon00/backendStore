@@ -42,3 +42,40 @@ export const getVentasRealizadas = async (req: Request, res: Response) => {
         res.status(500).json({ message: 'Error al obtener las ventas realizadas', error });
     }
 }
+export const getVentasPorPedido = async (req: Request, res: Response) => {
+    try {
+        const { pedidoId } = req.params;
+        const venta = await salesService.getVentasPorPedido(pedidoId);
+        res.status(200).json(venta);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas por pedido', error });
+    }
+};
+export const getVentasPorUsuario = async (req: Request, res: Response) => {
+    try {
+        const { usuarioId } = req.params;
+        const ventas = await salesService.getVentasPorUsuario(usuarioId);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas por usuario', error });
+    }
+};
+
+export const getVentasPorFecha = async (req: Request, res: Response) => {
+    try {
+        const { fecha } = req.params;
+        const ventas = await salesService.getVentasPorFecha(fecha);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas por fecha', error });
+    }
+};
+export const getVentasPorPedidoYUsuario = async (req: Request, res: Response) => {
+    try {
+        const { pedidoId, usuarioId } = req.params;
+        const ventas = await salesService.getVentasPorPedidoYUsuario(pedidoId, usuarioId);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas por pedido y usuario', error });
+    }
+};
