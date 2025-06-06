@@ -98,4 +98,18 @@ export class SalesModel {
             fecha: new Date(),
         };
     }
+
+    static async getVentasRealizadas(pedidoIds: string[]) {
+        const collection = await getPedidosCollection();
+        const ventas = await collection.find({
+            _id: { $in: pedidoIds.map(id => new ObjectId(id)) },
+            estado: 'completado'
+        }).toArray();
+        return ventas.map(venta => ({
+            _id: venta._id.toString(),
+            usuario: venta.usuario,
+            total: venta.total,
+            fecha: venta.fechaCreacion
+        }));
+    }
 }

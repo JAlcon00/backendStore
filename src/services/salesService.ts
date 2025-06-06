@@ -11,3 +11,7 @@ export const obtenerResumenVentasMensual = async () => {
 export const crearVentaDesdePedido = async (pedidoId: string) => {
   return SalesModel.crearVentaDesdePedido(pedidoId);
 };
+
+export const  getVentasRealizadas = async (usuarioId: string) => {
+  return SalesModel.getVentasRealizadas([usuarioId]);
+}

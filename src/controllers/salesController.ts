@@ -32,3 +32,13 @@ export const crearVentaDesdePedido = async (req: Request, res: Response) => {
         res.status(500).json({ message: 'Error al crear la venta desde el pedido', error });
     }
 };
+
+export const getVentasRealizadas = async (req: Request, res: Response) => {
+    try {
+        const { usuarioId } = req.body;
+        const ventas = await salesService.getVentasRealizadas(usuarioId);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas realizadas', error });
+    }
+}

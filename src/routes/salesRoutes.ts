@@ -1,6 +1,6 @@
 // backend/src/routes/salesRoutes.ts
 import { Router } from 'express';
-import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido } from '../controllers/salesController';
+import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido, getVentasRealizadas } from '../controllers/salesController';
 
 const router = Router();
 
@@ -46,5 +46,33 @@ router.get('/resumen-mensual', obtenerResumenVentasMensual);
  */
 router.post('/', crearVentaDesdePedido);
 
+/**
+ * @swagger
+ * /api/sales/realizadas:
+ *   post:
+ *     summary: Obtener ventas realizadas por un usuario
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               usuarioId:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Ventas realizadas obtenidas exitosamente
+ */
+
+router.post('/realizadas', async (req, res) => {
+    try {
+        const { usuarioId } = req.body;
+        const ventas = await getVentasRealizadas(usuarioId, res);
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las ventas realizadas', error });
+    }
+});
 export default router;
 
