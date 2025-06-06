@@ -95,9 +95,11 @@ export class SalesModel {
     // Obtener ventas realizadas por usuario (todas sus ventas)
     static async getVentasRealizadas(usuarioId: string) {
         const salesCollection = await getSalesCollection();
-        const ventas = await salesCollection.find({ usuario: usuarioId }).toArray();
+        // Aseguramos que usuarioId sea string (por si viene como ObjectId)
+        const query = { usuario: usuarioId };
+        const ventas = await salesCollection.find(query).toArray();
         return ventas.map(venta => ({
-            _id: venta._id.toString(),
+            _id: venta._id?.toString?.() ?? venta._id,
             usuario: venta.usuario,
             total: venta.total,
             fecha: venta.fecha,
@@ -108,10 +110,17 @@ export class SalesModel {
     // Obtener venta por pedido
     static async getVentasPorPedido(pedidoId: string) {
         const salesCollection = await getSalesCollection();
-        const venta = await salesCollection.findOne({ pedidoId: new ObjectId(pedidoId) });
+        // Aseguramos que pedidoId sea ObjectId
+        let objId;
+        try {
+            objId = new ObjectId(pedidoId);
+        } catch {
+            throw new Error('ID de pedido inválido');
+        }
+        const venta = await salesCollection.findOne({ pedidoId: objId });
         if (!venta) throw new Error('Venta no encontrada');
         return {
-            _id: venta._id.toString(),
+            _id: venta._id?.toString?.() ?? venta._id,
             usuario: venta.usuario,
             total: venta.total,
             fecha: venta.fecha,
@@ -122,9 +131,10 @@ export class SalesModel {
     // Obtener ventas por usuario
     static async getVentasPorUsuario(usuarioId: string) {
         const salesCollection = await getSalesCollection();
-        const ventas = await salesCollection.find({ usuario: usuarioId }).toArray();
+        const query = { usuario: usuarioId };
+        const ventas = await salesCollection.find(query).toArray();
         return ventas.map(venta => ({
-            _id: venta._id.toString(),
+            _id: venta._id?.toString?.() ?? venta._id,
             usuario: venta.usuario,
             total: venta.total,
             fecha: venta.fecha,
@@ -135,14 +145,16 @@ export class SalesModel {
     // Obtener ventas por fecha (YYYY-MM-DD)
     static async getVentasPorFecha(fecha: string) {
         const salesCollection = await getSalesCollection();
+        // Validar fecha y obtener rango del día
         const fechaInicio = new Date(fecha);
+        if (isNaN(fechaInicio.getTime())) throw new Error('Fecha inválida');
         const fechaFin = new Date(fechaInicio);
         fechaFin.setDate(fechaFin.getDate() + 1);
         const ventas = await salesCollection.find({
             fecha: { $gte: fechaInicio, $lt: fechaFin }
         }).toArray();
         return ventas.map(venta => ({
-            _id: venta._id.toString(),
+            _id: venta._id?.toString?.() ?? venta._id,
             usuario: venta.usuario,
             total: venta.total,
             fecha: venta.fecha,
@@ -153,10 +165,16 @@ export class SalesModel {
     // Obtener venta por pedido y usuario
     static async getVentasPorPedidoYUsuario(pedidoId: string, usuarioId: string) {
         const salesCollection = await getSalesCollection();
-        const venta = await salesCollection.findOne({ pedidoId: new ObjectId(pedidoId), usuario: usuarioId });
+        let objId;
+        try {
+            objId = new ObjectId(pedidoId);
+        } catch {
+            throw new Error('ID de pedido inválido');
+        }
+        const venta = await salesCollection.findOne({ pedidoId: objId, usuario: usuarioId });
         if (!venta) throw new Error('Venta no encontrada');
         return {
-            _id: venta._id.toString(),
+            _id: venta._id?.toString?.() ?? venta._id,
             usuario: venta.usuario,
             total: venta.total,
             fecha: venta.fecha,
