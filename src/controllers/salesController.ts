@@ -21,3 +21,14 @@ export const obtenerResumenVentasMensual = async (req: Request, res: Response) =
         res.status(500).json({ message: 'Error al obtener el resumen de ventas mensual', error });
     }
 };
+
+// Crear venta desde un pedido
+export const crearVentaDesdePedido = async (req: Request, res: Response) => {
+    try {
+        const { pedidoId } = req.body;
+        const venta = await salesService.crearVentaDesdePedido(pedidoId);
+        res.status(201).json(venta);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al crear la venta desde el pedido', error });
+    }
+};

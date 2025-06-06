@@ -7,3 +7,7 @@ export const obtenerVentasUltimos7Dias = async () => {
 export const obtenerResumenVentasMensual = async () => {
   return SalesModel.obtenerResumenVentasMensual();
 };
+
+export const crearVentaDesdePedido = async (pedidoId: string) => {
+  return SalesModel.crearVentaDesdePedido(pedidoId);
+};

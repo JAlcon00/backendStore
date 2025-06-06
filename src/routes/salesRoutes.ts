@@ -1,6 +1,6 @@
 // backend/src/routes/salesRoutes.ts
 import { Router } from 'express';
-import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual } from '../controllers/salesController';
+import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido } from '../controllers/salesController';
 
 const router = Router();
 
@@ -26,4 +26,25 @@ router.get('/ultimos-7-dias', obtenerVentasUltimos7Dias);
  */
 router.get('/resumen-mensual', obtenerResumenVentasMensual);
 
+/**
+ * @swagger
+ * /api/sales:
+ *   post:
+ *     summary: Crear una venta desde un pedido
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               pedidoId:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Venta creada exitosamente
+ */
+router.post('/', crearVentaDesdePedido);
+
 export default router;
+

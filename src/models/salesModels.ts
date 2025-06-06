@@ -1,5 +1,6 @@
 // backend/src/models/salesModels.ts
 import { getPedidosCollection } from '../config/db.config';
+import { ObjectId } from 'mongodb';
 
 export class SalesModel {
     // Obtener ventas de los últimos 7 días
@@ -75,6 +76,26 @@ export class SalesModel {
             totalVentas: 0,
             cantidadPedidos: 0,
             promedioVenta: 0
+        };
+    }
+
+    // Crear una venta desde un pedido (marcar como completado y devolver info de venta)
+    static async crearVentaDesdePedido(pedidoId: string) {
+        const collection = await getPedidosCollection();
+        // Buscar el pedido
+        const pedido = await collection.findOne({ _id: new ObjectId(pedidoId), activo: true });
+        if (!pedido) throw new Error('Pedido no encontrado');
+        // Cambiar estado a 'completado' y actualizar fecha
+        await collection.updateOne(
+            { _id: new ObjectId(pedidoId) },
+            { $set: { estado: 'completado', fechaActualizacion: new Date() } }
+        );
+        // Devolver la info de la venta (puedes personalizar esto)
+        return {
+            pedidoId: pedido._id,
+            usuario: pedido.usuario,
+            total: pedido.total,
+            fecha: new Date(),
         };
     }
 }
