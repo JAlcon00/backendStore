@@ -20,8 +20,8 @@ export const eliminarUsuario = async (id: string): Promise<boolean> => {
   return UsuarioModel.eliminar(id);
 };
 
-export const loginUsuario = async (email: string, password: string): Promise<IUsuario | null> => {
-  return UsuarioModel.validarCredenciales(email, password);
+export const loginUsuario = async (nombre: string, password: string): Promise<IUsuario | null> => {
+  return UsuarioModel.Login(nombre, password);
 };
 
 export const cambiarPassword = async (id: string, nuevaPassword: string): Promise<boolean> => {
@@ -34,4 +34,12 @@ export const buscarUsuariosPorRol = async (rol: 'cliente' | 'admin'): Promise<IU
 
 export const buscarUsuariosPorNombre = async (nombre: string): Promise<IUsuario[]> => {
   return UsuarioModel.buscarPorNombre(nombre);
+};
+
+export const obtenerUsuariosActivos = async (): Promise<IUsuario[]> => {
+  return UsuarioModel.obtenerUsuariosActivos();
+};
+
+export const obtenerUsuariosInactivos = async (): Promise<IUsuario[]> => {
+  return UsuarioModel.obtenerUsuariosInactivos();
 };

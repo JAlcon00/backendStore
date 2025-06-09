@@ -120,6 +120,28 @@ export const eliminarUsuario = async (req: Request, res: Response) => {
   }
 };
 
+// Obtener usuarios activos
+export const obtenerUsuariosActivos = async (req: Request, res: Response) => {
+  try {
+    const usuarios = await usuarioService.obtenerUsuariosActivos();
+    const usuariosSinPassword = usuarios.map(({ password, ...rest }) => rest);
+    res.status(200).json(usuariosSinPassword);
+  } catch (error) {
+    res.status(500).json({ message: "Error al obtener los usuarios activos", error });
+  }
+};
+
+// Obtener usuarios inactivos
+export const obtenerUsuariosInactivos = async (req: Request, res: Response) => {
+  try {
+    const usuarios = await usuarioService.obtenerUsuariosInactivos();
+    const usuariosSinPassword = usuarios.map(({ password, ...rest }) => rest);
+    res.status(200).json(usuariosSinPassword);
+  } catch (error) {
+    res.status(500).json({ message: "Error al obtener los usuarios inactivos", error });
+  }
+};
+
 // Login de usuario con rate limiting
 export const loginUsuario = async (
   req: Request,
@@ -127,16 +149,16 @@ export const loginUsuario = async (
   next: NextFunction
 ) => {
   try {
-    let { email, password } = req.body;
-    if (!email || !password) {
-      res.status(400).json({ message: "Email y password son requeridos" });
+    let { nombre, password } = req.body;
+    if (!nombre || !password) {
+      res.status(400).json({ message: "Nombre de usuario y password son requeridos" });
       return;
     }
 
-    // Encriptar email para buscar
-    logger.info('🔒 Encriptando email para login...');
-    const encryptedEmail = encryptData(email);
-    const usuario = await usuarioService.loginUsuario(encryptedEmail, password);
+    // Encriptar nombre para buscar
+    logger.info('🔒 Encriptando nombre para login...');
+    const encryptedNombre = encryptData(nombre);
+    const usuario = await usuarioService.loginUsuario(encryptedNombre, password);
     if (usuario) {
       // Desencriptar datos antes de responder
       const { password, ...rest } = usuario;

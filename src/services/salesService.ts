@@ -12,9 +12,9 @@ export const crearVentaDesdePedido = async (pedidoId: string) => {
   return SalesModel.crearVentaDesdePedido(pedidoId);
 };
 
-export const  getVentasRealizadas = async (usuarioId: string) => {
+export const getVentasRealizadas = async (usuarioId: string) => {
   return SalesModel.getVentasRealizadas(usuarioId);
-}
+};
 export const getVentasPorPedido = async (pedidoId: string) => {
   return SalesModel.getVentasPorPedido(pedidoId);
 };
@@ -26,4 +26,10 @@ export const getVentasPorFecha = async (fecha: string) => {
 };
 export const getVentasPorPedidoYUsuario = async (pedidoId: string, usuarioId: string) => {
   return SalesModel.getVentasPorPedidoYUsuario(pedidoId, usuarioId);
+};
+export const getAllVentas = async () => {
+  return SalesModel.getAllVentas();
+};
+export const borrarVentaPorPedido = async (pedidoId: string) => {
+  return SalesModel.borrarVentaPorPedido(pedidoId);
 };

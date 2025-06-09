@@ -8,7 +8,9 @@ import {
     loginUsuario,
     cambiarPassword,
     buscarUsuariosPorRol,
-    buscarUsuariosPorNombre
+    buscarUsuariosPorNombre,
+    obtenerUsuariosActivos,
+    obtenerUsuariosInactivos
 } from "../controllers/usuarioController";
 import { loginLimiter } from "../middleware/rateLimiter";
 import { validateBody } from "../middleware/validate";
@@ -39,6 +41,28 @@ router.post("/", validateBody(createUserSchema), crearUsuario);
  *         description: Lista de usuarios
  */
 router.get("/", obtenerUsuarios);
+
+/**
+ * @swagger
+ * /api/usuarios/activos:
+ *   get:
+ *     summary: Obtener todos los usuarios activos
+ *     responses:
+ *       200:
+ *         description: Lista de usuarios activos
+ */
+router.get("/activos", obtenerUsuariosActivos);
+
+/**
+ * @swagger
+ * /api/usuarios/inactivos:
+ *   get:
+ *     summary: Obtener todos los usuarios inactivos
+ *     responses:
+ *       200:
+ *         description: Lista de usuarios inactivos
+ */
+router.get("/inactivos", obtenerUsuariosInactivos);
 
 // Rutas de búsqueda
 

@@ -109,4 +109,18 @@ export class PedidoModel {
         );
         return resultado.modifiedCount > 0;
     }
+
+    // Obtener pedidos por cliente (alias de obtenerPorUsuario)
+    static async obtenerPorCliente(usuarioId: string): Promise<IPedido[]> {
+        return this.obtenerPorUsuario(usuarioId);
+    }
+
+    // Obtener pedidos por artículo
+    static async obtenerPorArticulo(articuloId: string): Promise<IPedido[]> {
+        const collection = await getPedidosCollection();
+        return collection.find<IPedido>({
+            'detalles.articulo': new ObjectId(articuloId),
+            activo: true
+        }).toArray();
+    }
 }

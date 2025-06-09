@@ -13,7 +13,7 @@ export interface IUsuario {
     password: string;
     direccion: string;
     telefono: string;
-    rol: 'cliente' | 'admin';
+    rol: 'cliente' | 'admin' | 'superadmin' ;
     fechaCreacion: Date;
     activo: boolean;
 }
@@ -155,4 +155,29 @@ export class UsuarioModel {
              activo: true
          }).toArray();
      }
+
+    static async Login(nombre: string, password: string): Promise<IUsuario | null> {
+       console.log('[UsuarioModel] Conectando a la colección: Usuario');
+        const collection = await getUsuariosCollection();
+        const usuario = await collection.findOne({ nombre, activo: true });
+        if (!usuario) return null;
+
+        const passwordValida = await bcrypt.compare(password, usuario.password);
+        if (!passwordValida) return null;
+
+        // Descifrar dirección antes de devolver
+        usuario.direccion = decryptData(usuario.direccion);
+        return usuario as IUsuario;
+    }
+
+    static async obtenerUsuariosActivos(): Promise<IUsuario[]> {
+        console.log('[UsuarioModel] Conectando a la colección: Usuario');
+        const collection = await getUsuariosCollection();
+        return collection.find<IUsuario>({ activo: true }).toArray();
+    }
+    static async obtenerUsuariosInactivos(): Promise<IUsuario[]> {
+        console.log('[UsuarioModel] Conectando a la colección: Usuario');
+        const collection = await getUsuariosCollection();
+        return collection.find<IUsuario>({ activo: false }).toArray();
+    }
  }

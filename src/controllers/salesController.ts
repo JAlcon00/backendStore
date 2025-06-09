@@ -79,3 +79,24 @@ export const getVentasPorPedidoYUsuario = async (req: Request, res: Response) =>
         res.status(500).json({ message: 'Error al obtener las ventas por pedido y usuario', error });
     }
 };
+
+// Eliminar venta por pedido
+export const borrarVentaPorPedido = async (req: Request, res: Response) => {
+  try {
+    const { pedidoId } = req.params;
+    await salesService.borrarVentaPorPedido(pedidoId);
+    res.status(200).json({ message: 'Venta eliminada correctamente' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al eliminar la venta', error });
+  }
+};
+
+// Obtener todas las ventas
+export const getAllVentas = async (req: Request, res: Response) => {
+    try {
+        const ventas = await salesService.getAllVentas();
+        res.status(200).json(ventas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener todas las ventas', error });
+    }
+};

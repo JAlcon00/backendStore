@@ -92,7 +92,9 @@ router.get('/usuario/:usuarioId', obtenerPedidosPorUsuario);
  *       404:
  *         description: Pedido no encontrado
  */
-router.put('/:id/estado', actualizarEstadoPedido);
+router.put('/:id/estado', (req, res) => {
+  actualizarEstadoPedido(req, res);
+});
 
 /**
  * @swagger

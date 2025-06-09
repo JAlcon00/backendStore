@@ -76,6 +76,21 @@ export class SalesModel {
         // Buscar el pedido
         const pedido = await pedidosCollection.findOne({ _id: new ObjectId(pedidoId), activo: true });
         if (!pedido) throw new Error('Pedido no encontrado');
+        // Calcular el total si no existe
+        let total = pedido.total;
+        if (typeof total !== 'number') {
+            if (Array.isArray(pedido.detalles)) {
+                total = pedido.detalles.reduce((acc, det) => {
+                    if (typeof det.subtotal === 'number') return acc + det.subtotal;
+                    if (typeof det.cantidad === 'number' && typeof det.precioUnitario === 'number') {
+                        return acc + det.cantidad * det.precioUnitario;
+                    }
+                    return acc;
+                }, 0);
+            } else {
+                total = 0;
+            }
+        }
         // Cambiar estado a 'completado' y actualizar fecha
         await pedidosCollection.updateOne(
             { _id: new ObjectId(pedidoId) },
@@ -85,7 +100,7 @@ export class SalesModel {
         const venta = {
             pedidoId: pedido._id,
             usuario: pedido.usuario,
-            total: pedido.total,
+            total,
             fecha: new Date()
         };
         await salesCollection.insertOne(venta);
@@ -180,6 +195,32 @@ export class SalesModel {
             fecha: venta.fecha,
             pedidoId: venta.pedidoId
         };
+    }
+
+    // Obtener todas las ventas
+    static async getAllVentas() {
+        const salesCollection = await getSalesCollection();
+        const ventas = await salesCollection.find({}).toArray();
+        return ventas.map(venta => ({
+            _id: venta._id?.toString?.() ?? venta._id,
+            usuario: venta.usuario,
+            total: venta.total,
+            fecha: venta.fecha,
+            pedidoId: venta.pedidoId
+        }));
+    }
+
+    // Eliminar venta por pedido
+    static async borrarVentaPorPedido(pedidoId: string) {
+        const salesCollection = await getSalesCollection();
+        let objId;
+        try {
+            objId = new ObjectId(pedidoId);
+        } catch {
+            throw new Error('ID de pedido inválido');
+        }
+        const result = await salesCollection.deleteOne({ pedidoId: objId });
+        return result.deletedCount > 0;
     }
 }
 

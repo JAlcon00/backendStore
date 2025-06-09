@@ -1,6 +1,6 @@
 // backend/src/routes/salesRoutes.ts
 import { Router } from 'express';
-import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido, getVentasRealizadas } from '../controllers/salesController';
+import { obtenerVentasUltimos7Dias, obtenerResumenVentasMensual, crearVentaDesdePedido, getVentasRealizadas, getAllVentas, borrarVentaPorPedido } from '../controllers/salesController';
 import { getVentasPorPedido, getVentasPorUsuario, getVentasPorFecha, getVentasPorPedidoYUsuario } from '../controllers/salesController';
 
 const router = Router();
@@ -129,6 +129,11 @@ router.get('/:pedidoId', getVentasPorPedido);
 
 router.get('/pedido-usuario/:pedidoId/:usuarioId', getVentasPorPedidoYUsuario);
 
+// Endpoint para obtener todas las ventas
+router.get('/', getAllVentas);
+
+// Endpoint para eliminar venta por pedido
+router.delete('/:pedidoId', borrarVentaPorPedido);
 
 export default router;
 
