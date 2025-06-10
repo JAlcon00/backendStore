@@ -1,0 +1,57 @@
+2025-06-10T11:41:51.634Z [info]: 🔧 Creando índices en colecciones...
+2025-06-10T11:41:52.597Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-10T11:41:52.598Z [info]: 📂 Colección Usuarios OK
+2025-06-10T11:41:52.598Z [info]: 📂 Colección Articulos OK
+2025-06-10T11:41:52.599Z [info]: 📂 Colección Pedidos OK
+2025-06-10T11:41:52.601Z [info]: 📂 Colección Categorias OK
+2025-06-10T11:41:52.601Z [info]: 📂 Colección Clientes OK
+2025-06-10T11:41:52.602Z [info]: 📂 Colección Stats OK
+2025-06-10T11:41:52.602Z [info]: 📂 Colección Sales OK
+2025-06-10T11:41:52.607Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-10T11:41:52.608Z [info]: 🔗 URL: http://localhost:3005
+2025-06-10T11:42:01.603Z [info]: 🔧 Creando índices en colecciones...
+2025-06-10T11:42:02.580Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-10T11:42:02.581Z [info]: 📂 Colección Usuarios OK
+2025-06-10T11:42:02.582Z [info]: 📂 Colección Articulos OK
+2025-06-10T11:42:02.582Z [info]: 📂 Colección Pedidos OK
+2025-06-10T11:42:02.583Z [info]: 📂 Colección Categorias OK
+2025-06-10T11:42:02.583Z [info]: 📂 Colección Clientes OK
+2025-06-10T11:42:02.584Z [info]: 📂 Colección Stats OK
+2025-06-10T11:42:02.585Z [info]: 📂 Colección Sales OK
+2025-06-10T11:42:02.589Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-10T11:42:02.589Z [info]: 🔗 URL: http://localhost:3005
+2025-06-10T11:42:33.295Z [info]: [90mGET /api/usuarios[39m [32m200[39m [90m86ms[39m
+2025-06-10T11:42:35.850Z [info]: [90mGET /api/usuarios[39m [36m304[39m [90m81ms[39m
+2025-06-10T11:42:55.797Z [info]: [90mOPTIONS /api/usuarios[39m [32m204[39m [90m1ms[39m
+2025-06-10T11:42:56.243Z [info]: [90mPOST /api/usuarios[39m [32m201[39m [90m446ms[39m
+2025-06-10T11:42:56.243Z [info]: ✅ Usuario registrado exitosamente - ID: 68481a403c1710fbef5cf1ff
+2025-06-10T11:42:56.336Z [info]: [90mGET /api/usuarios[39m [32m200[39m [90m76ms[39m
+2025-06-10T11:45:10.339Z [info]: 🔧 Creando índices en colecciones...
+2025-06-10T11:45:11.256Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-10T11:45:11.256Z [info]: 📂 Colección Usuarios OK
+2025-06-10T11:45:11.257Z [info]: 📂 Colección Articulos OK
+2025-06-10T11:45:11.258Z [info]: 📂 Colección Pedidos OK
+2025-06-10T11:45:11.258Z [info]: 📂 Colección Categorias OK
+2025-06-10T11:45:11.259Z [info]: 📂 Colección Clientes OK
+2025-06-10T11:45:11.259Z [info]: 📂 Colección Stats OK
+2025-06-10T11:45:11.260Z [info]: 📂 Colección Sales OK
+2025-06-10T11:45:11.264Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-10T11:45:11.264Z [info]: 🔗 URL: http://localhost:3005
+2025-06-10T11:45:22.188Z [info]: 🔧 Creando índices en colecciones...
+2025-06-10T11:45:24.965Z [info]: 🔧 Creando índices en colecciones...
+2025-06-10T11:45:25.971Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-10T11:45:25.976Z [info]: 📂 Colección Usuarios OK
+2025-06-10T11:45:25.977Z [info]: 📂 Colección Articulos OK
+2025-06-10T11:45:25.978Z [info]: 📂 Colección Pedidos OK
+2025-06-10T11:45:25.979Z [info]: 📂 Colección Categorias OK
+2025-06-10T11:45:25.981Z [info]: 📂 Colección Clientes OK
+2025-06-10T11:45:25.982Z [info]: 📂 Colección Stats OK
+2025-06-10T11:45:25.983Z [info]: 📂 Colección Sales OK
+2025-06-10T11:45:25.996Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-10T11:45:25.997Z [info]: 🔗 URL: http://localhost:3005
+2025-06-10T11:45:27.004Z [info]: [90mGET /api/usuarios[39m [36m304[39m [90m93ms[39m
+2025-06-10T11:45:29.926Z [info]: [90mGET /api/usuarios[39m [36m304[39m [90m82ms[39m
+2025-06-10T11:45:57.650Z [info]: [90mOPTIONS /api/usuarios[39m [32m204[39m [90m0ms[39m
+2025-06-10T11:45:58.103Z [info]: [90mPOST /api/usuarios[39m [32m201[39m [90m450ms[39m
+2025-06-10T11:45:58.103Z [info]: ✅ Usuario registrado exitosamente - ID: 68481af69fb51022f6213f27
+2025-06-10T11:45:58.193Z [info]: [90mGET /api/usuarios[39m [32m200[39m [90m77ms[39m

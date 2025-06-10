@@ -36,7 +36,23 @@ app.use(expressWinston.logger({
 }));
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:5173', // Vite local
+  'http://localhost:3000', // React local (si aplica)
+  'https://tudominio-frontend.com', // Producción, reemplaza por tu dominio real
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // Permite peticiones sin origen (Postman, Android, etc.)
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    // Permite todo para compatibilidad, o puedes devolver un error si quieres restringir
+    return callback(null, true);
+  },
+  // credentials: true, // Descomenta solo si usas cookies/autenticación
+}));
 app.use(express.json());
 app.use('/uploads/articulos', express.static(path.join(__dirname, '../uploads/articulos')));
 

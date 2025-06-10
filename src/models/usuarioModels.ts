@@ -27,7 +27,8 @@ export class UsuarioModel {
         const nuevoUsuario = {
             nombre: usuario.nombre,
             password: hashPassword,
-            rol: usuario.rol
+            rol: usuario.rol,
+            activo: true // <-- Asegura que el usuario sea visible en la tabla
         };
         const resultado = await collection.insertOne(nuevoUsuario);
         return { ...nuevoUsuario, _id: resultado.insertedId } as IUsuario;
