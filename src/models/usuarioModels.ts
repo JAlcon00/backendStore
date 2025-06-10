@@ -1,7 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { getUsuariosCollection } from '../config/db.config';
 import bcrypt from 'bcrypt';
-import { encryptData, decryptData } from '../utils/crypto';
 
 const SALT_ROUNDS = 12; 
 
@@ -9,43 +8,29 @@ const SALT_ROUNDS = 12;
 export interface IUsuario {
     _id?: ObjectId;
     nombre: string;
-    email: string;
     password: string;
-    direccion: string;
-    telefono: string;
-    rol: 'cliente' | 'admin' | 'superadmin' ;
-    fechaCreacion: Date;
-    activo: boolean;
+    rol: 'cliente' | 'admin' | 'superadmin';
 }
 
 export class UsuarioModel {
     // Crear un nuevo usuario
-    static async crear(usuario: Omit<IUsuario, '_id' | 'fechaCreacion' | 'activo'>): Promise<IUsuario> {
+    static async crear(usuario: Omit<IUsuario, '_id'>): Promise<IUsuario> {
         console.log('[UsuarioModel] Conectando a la colección: Usuario');
         const collection = await getUsuariosCollection();
-        
-        // Verificar si el email ya existe
-        const existeEmail = await collection.findOne({ email: usuario.email });
-        if (existeEmail) {
-            throw new Error('El email ya está registrado');
+        // Verificar si el nombre ya existe
+        const existeNombre = await collection.findOne({ nombre: usuario.nombre });
+        if (existeNombre) {
+            throw new Error('El nombre ya está registrado');
         }
-
         // Encriptar contraseña
         const hashPassword = await bcrypt.hash(usuario.password, SALT_ROUNDS);
-        // Cifrar dirección
-        const direccionCifrada = encryptData(usuario.direccion);
-        
         const nuevoUsuario = {
-            ...usuario,
+            nombre: usuario.nombre,
             password: hashPassword,
-            direccion: direccionCifrada,
-            fechaCreacion: new Date(),
-            activo: true
+            rol: usuario.rol
         };
-        
         const resultado = await collection.insertOne(nuevoUsuario);
-        // Devolver usuario con dirección descifrada
-        return { ...nuevoUsuario, direccion: usuario.direccion, _id: resultado.insertedId } as IUsuario;
+        return { ...nuevoUsuario, _id: resultado.insertedId } as IUsuario;
     }
 
     // Obtener todos los usuarios activos
@@ -62,28 +47,16 @@ export class UsuarioModel {
          try {
              const usuario = await collection.findOne({ _id: new ObjectId(id), activo: true });
              if (!usuario) return null;
-             // Descifrar dirección
-             usuario.direccion = decryptData(usuario.direccion);
              return usuario as IUsuario;
          } catch (error) {
              throw new Error('ID de usuario inválido');
          }
      }
 
-     // Obtener usuario por email
-     static async obtenerPorEmail(email: string): Promise<IUsuario | null> {
-        console.log('[UsuarioModel] Conectando a la colección: Usuario');
-         const collection = await getUsuariosCollection();
-         return collection.findOne({ 
-             email, 
-             activo: true 
-         }) as Promise<IUsuario | null>;
-     }
-
      // Validar credenciales para login
-     static async validarCredenciales(email: string, password: string): Promise<IUsuario | null> {
+     static async validarCredenciales(nombre: string, password: string): Promise<IUsuario | null> {
         // Se reutiliza getUsuariosCollection desde obtenerPorEmail
-         const usuario = await this.obtenerPorEmail(email);
+         const usuario = await this.obtenerPorId(nombre);
          if (!usuario) return null;
 
          const passwordValida = await bcrypt.compare(password, usuario.password);
@@ -95,14 +68,14 @@ export class UsuarioModel {
         console.log('[UsuarioModel] Conectando a la colección: Usuario');
          const collection = await getUsuariosCollection();
          
-         // Si se actualiza el email, verificar que no exista
-         if (usuario.email) {
-             const existeEmail = await collection.findOne({
-                 email: usuario.email,
+         // Si se actualiza el nombre, verificar que no exista
+         if (usuario.nombre) {
+             const existeNombre = await collection.findOne({
+                 nombre: usuario.nombre,
                  _id: { $ne: new ObjectId(id) }
              });
-             if (existeEmail) {
-                 throw new Error('El email ya está registrado');
+             if (existeNombre) {
+                 throw new Error('El nombre ya está registrado');
              }
          }
          
@@ -165,8 +138,6 @@ export class UsuarioModel {
         const passwordValida = await bcrypt.compare(password, usuario.password);
         if (!passwordValida) return null;
 
-        // Descifrar dirección antes de devolver
-        usuario.direccion = decryptData(usuario.direccion);
         return usuario as IUsuario;
     }
 

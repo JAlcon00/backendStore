@@ -2,15 +2,12 @@ import Joi from 'joi';
 
 export const createUserSchema = Joi.object({
   nombre: Joi.string().required(),
-  email: Joi.string().email().required(),
   password: Joi.string().min(6).required(),
-  direccion: Joi.string().required(),
-  telefono: Joi.string().required(),
-  role: Joi.string().valid('cliente', 'admin').default('cliente')
+  rol: Joi.string().valid('cliente', 'admin', 'superadmin').required()
 });
 
 export const loginSchema = Joi.object({
-  email: Joi.string().email().required(),
+  nombre: Joi.string().required(),
   password: Joi.string().required()
 });
 
@@ -20,8 +17,6 @@ export const changePasswordSchema = Joi.object({
 
 export const updateUserSchema = Joi.object({
   nombre: Joi.string(),
-  email: Joi.string().email(),
   password: Joi.string().min(6),
-  direccion: Joi.string(),
-  telefono: Joi.string()
+  rol: Joi.string().valid('cliente', 'admin', 'superadmin')
 }).min(1);

@@ -6,35 +6,17 @@ import logger from '../utils/logger';
 // Crear un nuevo usuario
 export const crearUsuario = async (req: Request, res: Response) => {
     try {
-        // Encriptar datos sensibles
-        const { nombre, email, direccion, telefono, ...rest } = req.body;
-        logger.info('🔒 Encriptando datos de usuario...');
-        const encrypted = {
-          ...rest,
-          nombre: encryptData(nombre),
-          email: encryptData(email),
-          direccion: encryptData(direccion),
-          telefono: encryptData(telefono)
-        };
-        const usuario = await usuarioService.crearUsuario(encrypted);
-        // Desencriptar para la respuesta
-        const { password, ...usuarioSinPassword } = usuario;
-        const decryptedUsuario = {
-          ...usuarioSinPassword,
-          nombre: decryptData(usuarioSinPassword.nombre),
-          email: decryptData(usuarioSinPassword.email),
-          direccion: decryptData(usuarioSinPassword.direccion),
-          telefono: decryptData(usuarioSinPassword.telefono)
-        };
-        // No se genera token JWT
-        res.status(201).json({ user: decryptedUsuario });
+        const { nombre, password, rol } = req.body;
+        const usuario = await usuarioService.crearUsuario({ nombre, password, rol });
+        const { password: _, ...usuarioSinPassword } = usuario;
+        res.status(201).json({ user: usuarioSinPassword });
         logger.info(`✅ Usuario registrado exitosamente - ID: ${usuario._id}`);
     } catch (error) {
         if (
             error instanceof Error &&
-            error.message === "El email ya está registrado"
+            error.message === "El nombre ya está registrado"
         ) {
-            logger.warn('Email ya registrado');
+            logger.warn('Nombre ya registrado');
             res.status(400).json({ message: error.message });
         } else {
             logger.error('Error al crear usuario:', error);
@@ -59,16 +41,9 @@ export const obtenerUsuariobyId = async (req: Request, res: Response) => {
   try {
     const usuario = await usuarioService.obtenerUsuariobyId(req.params.id);
     if (usuario) {
-      // Desencriptar campos sensibles
+      // Eliminar password de la respuesta
       const { password, ...rest } = usuario;
-      const decrypted = {
-        ...rest,
-        nombre: decryptData(rest.nombre),
-        email: decryptData(rest.email),
-        direccion: decryptData(rest.direccion),
-        telefono: decryptData(rest.telefono)
-      };
-      res.status(200).json(decrypted);
+      res.status(200).json(rest);
     } else {
       res.status(404).json({ message: "Usuario no encontrado" });
     }
@@ -154,23 +129,12 @@ export const loginUsuario = async (
       res.status(400).json({ message: "Nombre de usuario y password son requeridos" });
       return;
     }
-
-    // Encriptar nombre para buscar
-    logger.info('🔒 Encriptando nombre para login...');
-    const encryptedNombre = encryptData(nombre);
-    const usuario = await usuarioService.loginUsuario(encryptedNombre, password);
+    // Buscar usuario
+    const usuario = await usuarioService.loginUsuario(nombre, password);
     if (usuario) {
-      // Desencriptar datos antes de responder
+      // Eliminar password de la respuesta
       const { password, ...rest } = usuario;
-      const decrypted = {
-        ...rest,
-        nombre: decryptData(rest.nombre),
-        email: decryptData(rest.email),
-        direccion: decryptData(rest.direccion),
-        telefono: decryptData(rest.telefono)
-      };
-      // No se genera token JWT
-      res.status(200).json({ user: decrypted });
+      res.status(200).json({ user: rest });
     } else {
       res.status(401).json({ message: "Credenciales inválidas" });
     }

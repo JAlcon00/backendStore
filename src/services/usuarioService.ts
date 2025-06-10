@@ -1,6 +1,6 @@
 import { IUsuario, UsuarioModel } from "../models/usuarioModels";
 
-export const crearUsuario = async (usuario: Omit<IUsuario, '_id' | 'fechaCreacion' | 'activo'>): Promise<IUsuario> => {
+export const crearUsuario = async (usuario: { nombre: string; password: string; rol: 'cliente' | 'admin' | 'superadmin' }): Promise<IUsuario> => {
   return UsuarioModel.crear(usuario);
 };
 
