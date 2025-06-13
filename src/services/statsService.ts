@@ -5,5 +5,13 @@ export const obtenerEstadisticasVentas = async () => {
 };
 
 export const obtenerArticulosMasVendidos = async () => {
-  return statsModel.obtenerArticulosMasVendidos();
+  console.log('[statsService] Iniciando obtenerArticulosMasVendidos');
+  try {
+    const resultado = await statsModel.obtenerArticulosMasVendidos();
+    console.log('[statsService] Resultado de statsModel.obtenerArticulosMasVendidos:', resultado);
+    return resultado;
+  } catch (error) {
+    console.error('[statsService] Error en obtenerArticulosMasVendidos:', error);
+    throw error; // Re-lanzar el error para que el controlador lo maneje
+  }
 };

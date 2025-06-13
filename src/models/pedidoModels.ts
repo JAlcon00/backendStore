@@ -27,8 +27,18 @@ export class PedidoModel {
     static async crear(pedido: Omit<IPedido, '_id' | 'fechaCreacion' | 'fechaActualizacion' | 'activo'>): Promise<IPedido> {
         console.log('[PedidoModel] Conectando a la colección: Pedido');
         const collection = await getPedidosCollection();
+        // Calcular el total correctamente
+        let total = 0;
+        if (Array.isArray(pedido.detalles)) {
+            total = pedido.detalles.reduce((acc, det) => {
+                const subtotal = (det.cantidad || 0) * (det.precioUnitario || 0);
+                det.subtotal = subtotal;
+                return acc + subtotal;
+            }, 0);
+        }
         const nuevoPedido = {
             ...pedido,
+            total,
             fechaCreacion: new Date(),
             fechaActualizacion: new Date(),
             activo: true
@@ -87,11 +97,21 @@ export class PedidoModel {
     static async actualizar(id: string, pedido: Partial<IPedido>): Promise<boolean> {
         console.log('[PedidoModel] Conectando a la colección: Pedido');
         const collection = await getPedidosCollection();
+        // Si se actualizan los detalles, recalcula el total
+        let total = pedido.total;
+        if (Array.isArray(pedido.detalles)) {
+            total = pedido.detalles.reduce((acc, det) => {
+                const subtotal = (det.cantidad || 0) * (det.precioUnitario || 0);
+                det.subtotal = subtotal;
+                return acc + subtotal;
+            }, 0);
+        }
         const resultado = await collection.updateOne(
             { _id: new ObjectId(id) },
             { 
                 $set: {
                     ...pedido,
+                    total,
                     fechaActualizacion: new Date()
                 }
             }

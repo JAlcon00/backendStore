@@ -1,0 +1,876 @@
+2025-06-13T15:37:11.195Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T15:37:12.394Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T15:37:12.395Z [info]: 📂 Colección Usuarios OK
+2025-06-13T15:37:12.396Z [info]: 📂 Colección Articulos OK
+2025-06-13T15:37:12.397Z [info]: 📂 Colección Pedidos OK
+2025-06-13T15:37:12.398Z [info]: 📂 Colección Categorias OK
+2025-06-13T15:37:12.398Z [info]: 📂 Colección Clientes OK
+2025-06-13T15:37:12.399Z [info]: 📂 Colección Stats OK
+2025-06-13T15:37:12.399Z [info]: 📂 Colección Sales OK
+2025-06-13T15:37:12.407Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T15:37:12.407Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T15:37:43.978Z [info]: [90mOPTIONS /api/usuarios/login[39m [32m204[39m [90m2ms[39m
+2025-06-13T15:37:44.354Z [info]: [90mPOST /api/usuarios/login[39m [32m200[39m [90m372ms[39m
+2025-06-13T15:37:44.808Z [info]: [90mGET /api/sales/resumen-mensual[39m [32m200[39m [90m105ms[39m
+2025-06-13T15:37:44.812Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [32m200[39m [90m124ms[39m
+2025-06-13T15:37:44.820Z [info]: [90mGET /api/sales[39m [32m200[39m [90m115ms[39m
+2025-06-13T15:37:44.890Z [info]: [90mGET /api/stats/ventas[39m [32m200[39m [90m177ms[39m
+2025-06-13T15:37:44.953Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m138ms[39m
+2025-06-13T15:37:44.958Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m136ms[39m
+2025-06-13T15:37:45.308Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m596ms[39m
+2025-06-13T15:37:45.337Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m630ms[39m
+2025-06-13T15:39:10.325Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m127ms[39m
+2025-06-13T15:39:10.392Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m168ms[39m
+2025-06-13T15:39:10.410Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m184ms[39m
+2025-06-13T15:39:10.416Z [info]: [90mGET /api/sales[39m [36m304[39m [90m177ms[39m
+2025-06-13T15:39:10.421Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m177ms[39m
+2025-06-13T15:39:11.038Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m784ms[39m
+2025-06-13T15:39:11.101Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m856ms[39m
+2025-06-13T15:51:25.375Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T15:51:26.390Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T15:51:26.391Z [info]: 📂 Colección Usuarios OK
+2025-06-13T15:51:26.393Z [info]: 📂 Colección Articulos OK
+2025-06-13T15:51:26.394Z [info]: 📂 Colección Pedidos OK
+2025-06-13T15:51:26.395Z [info]: 📂 Colección Categorias OK
+2025-06-13T15:51:26.395Z [info]: 📂 Colección Clientes OK
+2025-06-13T15:51:26.396Z [info]: 📂 Colección Stats OK
+2025-06-13T15:51:26.397Z [info]: 📂 Colección Sales OK
+2025-06-13T15:51:26.403Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T15:51:26.404Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T15:51:44.775Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:51:44.779Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m107ms[39m
+2025-06-13T15:51:44.781Z [info]: [90mGET /api/sales[39m [36m304[39m [90m104ms[39m
+2025-06-13T15:51:44.875Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m99ms[39m
+2025-06-13T15:51:44.877Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m186ms[39m
+2025-06-13T15:51:44.901Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m117ms[39m
+2025-06-13T15:51:45.264Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m575ms[39m
+2025-06-13T15:51:45.270Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m581ms[39m
+2025-06-13T15:53:12.963Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T15:53:12.965Z [info]: [90mGET /api/sales[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:53:12.968Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m89ms[39m
+2025-06-13T15:53:12.969Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m95ms[39m
+2025-06-13T15:53:12.972Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m83ms[39m
+2025-06-13T15:53:13.044Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m73ms[39m
+2025-06-13T15:53:13.046Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m72ms[39m
+2025-06-13T15:53:13.049Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m73ms[39m
+2025-06-13T15:53:13.056Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m72ms[39m
+2025-06-13T15:53:13.058Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m80ms[39m
+2025-06-13T15:53:13.600Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m710ms[39m
+2025-06-13T15:54:08.493Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:54:11.270Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m104ms[39m
+2025-06-13T15:54:11.284Z [info]: [90mGET /api/sales[39m [36m304[39m [90m124ms[39m
+2025-06-13T15:54:11.287Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m119ms[39m
+2025-06-13T15:54:11.288Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m130ms[39m
+2025-06-13T15:54:11.290Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m137ms[39m
+2025-06-13T15:54:11.293Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m123ms[39m
+2025-06-13T15:54:11.358Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:54:11.379Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m82ms[39m
+2025-06-13T15:54:11.380Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:54:11.382Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m82ms[39m
+2025-06-13T15:54:11.383Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:54:49.156Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m109ms[39m
+2025-06-13T15:56:10.654Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T15:56:11.713Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T15:56:11.714Z [info]: 📂 Colección Usuarios OK
+2025-06-13T15:56:11.714Z [info]: 📂 Colección Articulos OK
+2025-06-13T15:56:11.715Z [info]: 📂 Colección Pedidos OK
+2025-06-13T15:56:11.716Z [info]: 📂 Colección Categorias OK
+2025-06-13T15:56:11.717Z [info]: 📂 Colección Clientes OK
+2025-06-13T15:56:11.719Z [info]: 📂 Colección Stats OK
+2025-06-13T15:56:11.719Z [info]: 📂 Colección Sales OK
+2025-06-13T15:56:11.725Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T15:56:11.726Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T15:56:13.918Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:56:13.921Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m97ms[39m
+2025-06-13T15:56:13.923Z [info]: [90mGET /api/sales[39m [36m304[39m [90m92ms[39m
+2025-06-13T15:56:13.992Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m137ms[39m
+2025-06-13T15:56:14.018Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m94ms[39m
+2025-06-13T15:56:14.342Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m491ms[39m
+2025-06-13T15:56:14.352Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m510ms[39m
+2025-06-13T15:56:16.245Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m98ms[39m
+2025-06-13T15:56:16.263Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m118ms[39m
+2025-06-13T15:56:16.266Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m118ms[39m
+2025-06-13T15:56:16.267Z [info]: [90mGET /api/sales[39m [36m304[39m [90m118ms[39m
+2025-06-13T15:56:16.268Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m131ms[39m
+2025-06-13T15:56:16.340Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m94ms[39m
+2025-06-13T15:56:16.363Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m92ms[39m
+2025-06-13T15:56:16.368Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m95ms[39m
+2025-06-13T15:56:16.371Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m98ms[39m
+2025-06-13T15:56:16.373Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m102ms[39m
+2025-06-13T15:56:16.774Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m625ms[39m
+2025-06-13T15:57:06.308Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T15:57:07.366Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T15:57:07.367Z [info]: 📂 Colección Usuarios OK
+2025-06-13T15:57:07.368Z [info]: 📂 Colección Articulos OK
+2025-06-13T15:57:07.368Z [info]: 📂 Colección Pedidos OK
+2025-06-13T15:57:07.369Z [info]: 📂 Colección Categorias OK
+2025-06-13T15:57:07.369Z [info]: 📂 Colección Clientes OK
+2025-06-13T15:57:07.370Z [info]: 📂 Colección Stats OK
+2025-06-13T15:57:07.371Z [info]: 📂 Colección Sales OK
+2025-06-13T15:57:07.376Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T15:57:07.377Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T15:57:55.812Z [info]: [90mGET /api/sales[39m [36m304[39m [90m91ms[39m
+2025-06-13T15:57:55.816Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m85ms[39m
+2025-06-13T15:57:55.852Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m106ms[39m
+2025-06-13T15:57:55.905Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m152ms[39m
+2025-06-13T15:57:55.907Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m93ms[39m
+2025-06-13T15:57:56.487Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m734ms[39m
+2025-06-13T15:57:56.524Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m774ms[39m
+2025-06-13T15:57:57.698Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m71ms[39m
+2025-06-13T15:57:57.701Z [info]: [90mGET /api/sales[39m [36m304[39m [90m75ms[39m
+2025-06-13T15:57:57.704Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T15:57:57.706Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m82ms[39m
+2025-06-13T15:57:57.708Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T15:57:57.824Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m109ms[39m
+2025-06-13T15:57:57.826Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m107ms[39m
+2025-06-13T15:57:57.838Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m127ms[39m
+2025-06-13T15:57:57.854Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m143ms[39m
+2025-06-13T15:57:57.857Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m141ms[39m
+2025-06-13T15:57:57.927Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [32m200[39m [90m75ms[39m
+2025-06-13T15:57:57.928Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [32m200[39m [90m81ms[39m
+2025-06-13T15:57:57.932Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [32m200[39m [90m74ms[39m
+2025-06-13T15:57:57.986Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [32m200[39m [90m119ms[39m
+2025-06-13T15:57:57.988Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [32m200[39m [90m121ms[39m
+2025-06-13T15:57:58.236Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m609ms[39m
+2025-06-13T15:58:10.907Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m83ms[39m
+2025-06-13T15:58:10.909Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m85ms[39m
+2025-06-13T15:58:10.911Z [info]: [90mGET /api/sales[39m [36m304[39m [90m89ms[39m
+2025-06-13T15:58:10.919Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m93ms[39m
+2025-06-13T15:58:10.922Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m104ms[39m
+2025-06-13T15:58:10.923Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m102ms[39m
+2025-06-13T15:58:11.029Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m113ms[39m
+2025-06-13T15:58:11.030Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m104ms[39m
+2025-06-13T15:58:11.032Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m118ms[39m
+2025-06-13T15:58:11.035Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m110ms[39m
+2025-06-13T15:58:11.037Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m125ms[39m
+2025-06-13T15:58:11.135Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [36m304[39m [90m74ms[39m
+2025-06-13T15:58:11.137Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m79ms[39m
+2025-06-13T15:58:11.138Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [36m304[39m [90m76ms[39m
+2025-06-13T15:58:11.139Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [36m304[39m [90m77ms[39m
+2025-06-13T15:58:11.140Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m80ms[39m
+2025-06-13T15:58:11.146Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m84ms[39m
+2025-06-13T15:58:11.216Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m73ms[39m
+2025-06-13T15:58:11.219Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [36m304[39m [90m75ms[39m
+2025-06-13T15:58:11.220Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [36m304[39m [90m75ms[39m
+2025-06-13T15:58:11.221Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [36m304[39m [90m78ms[39m
+2025-06-13T15:59:36.805Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m126ms[39m
+2025-06-13T15:59:36.888Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m186ms[39m
+2025-06-13T15:59:36.929Z [info]: [90mGET /api/sales[39m [36m304[39m [90m221ms[39m
+2025-06-13T15:59:36.931Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m222ms[39m
+2025-06-13T15:59:36.997Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m294ms[39m
+2025-06-13T15:59:36.999Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m300ms[39m
+2025-06-13T15:59:37.064Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m255ms[39m
+2025-06-13T16:00:39.741Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T16:00:39.775Z [info]: [90mGET /api/sales[39m [36m304[39m [90m85ms[39m
+2025-06-13T16:00:39.801Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m87ms[39m
+2025-06-13T16:00:39.803Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T16:00:39.806Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T16:00:39.828Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m102ms[39m
+2025-06-13T16:00:39.832Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m87ms[39m
+2025-06-13T16:00:41.598Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m78ms[39m
+2025-06-13T16:00:41.600Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m79ms[39m
+2025-06-13T16:00:41.601Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T16:00:41.605Z [info]: [90mGET /api/sales[39m [36m304[39m [90m85ms[39m
+2025-06-13T16:00:41.639Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m120ms[39m
+2025-06-13T16:00:41.642Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m120ms[39m
+2025-06-13T16:00:41.711Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m104ms[39m
+2025-06-13T16:00:41.713Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m106ms[39m
+2025-06-13T16:00:41.716Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m108ms[39m
+2025-06-13T16:00:41.719Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m111ms[39m
+2025-06-13T16:00:41.720Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m75ms[39m
+2025-06-13T16:00:41.801Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m76ms[39m
+2025-06-13T16:00:41.840Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [36m304[39m [90m109ms[39m
+2025-06-13T16:00:41.846Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m106ms[39m
+2025-06-13T16:00:41.854Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [36m304[39m [90m118ms[39m
+2025-06-13T16:00:41.854Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m117ms[39m
+2025-06-13T16:00:41.876Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m74ms[39m
+2025-06-13T16:00:41.923Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [36m304[39m [90m81ms[39m
+2025-06-13T16:00:41.929Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [36m304[39m [90m72ms[39m
+2025-06-13T16:00:41.931Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [36m304[39m [90m75ms[39m
+2025-06-13T16:00:42.106Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [36m304[39m [90m368ms[39m
+2025-06-13T16:05:10.888Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m25473ms[39m
+2025-06-13T16:05:10.961Z [info]: [90mGET /api/sales[39m [36m304[39m [90m25551ms[39m
+2025-06-13T16:05:10.969Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m25568ms[39m
+2025-06-13T16:05:11.040Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m25632ms[39m
+2025-06-13T16:05:11.049Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m158ms[39m
+2025-06-13T16:05:11.310Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m25896ms[39m
+2025-06-13T16:05:11.461Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m26045ms[39m
+2025-06-13T16:28:46.829Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m1758ms[39m
+2025-06-13T16:29:24.737Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m503ms[39m
+2025-06-13T16:29:30.126Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m87ms[39m
+2025-06-13T16:30:57.540Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T16:30:58.690Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T16:30:58.691Z [info]: 📂 Colección Usuarios OK
+2025-06-13T16:30:58.691Z [info]: 📂 Colección Articulos OK
+2025-06-13T16:30:58.692Z [info]: 📂 Colección Pedidos OK
+2025-06-13T16:30:58.693Z [info]: 📂 Colección Categorias OK
+2025-06-13T16:30:58.693Z [info]: 📂 Colección Clientes OK
+2025-06-13T16:30:58.694Z [info]: 📂 Colección Stats OK
+2025-06-13T16:30:58.694Z [info]: 📂 Colección Sales OK
+2025-06-13T16:30:58.697Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T16:30:58.697Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T16:31:13.856Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T16:31:14.984Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T16:31:14.985Z [info]: 📂 Colección Usuarios OK
+2025-06-13T16:31:14.985Z [info]: 📂 Colección Articulos OK
+2025-06-13T16:31:14.985Z [info]: 📂 Colección Pedidos OK
+2025-06-13T16:31:14.986Z [info]: 📂 Colección Categorias OK
+2025-06-13T16:31:14.986Z [info]: 📂 Colección Clientes OK
+2025-06-13T16:31:14.986Z [info]: 📂 Colección Stats OK
+2025-06-13T16:31:14.986Z [info]: 📂 Colección Sales OK
+2025-06-13T16:31:14.988Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T16:31:14.989Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T16:31:37.010Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m94ms[39m
+2025-06-13T16:31:37.018Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m108ms[39m
+2025-06-13T16:31:37.020Z [info]: [90mGET /api/sales[39m [36m304[39m [90m117ms[39m
+2025-06-13T16:31:37.128Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m204ms[39m
+2025-06-13T16:31:37.505Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m590ms[39m
+2025-06-13T16:31:37.595Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m681ms[39m
+2025-06-13T16:31:38.173Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m82ms[39m
+2025-06-13T16:31:38.174Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T16:31:38.181Z [info]: [90mGET /api/sales[39m [36m304[39m [90m87ms[39m
+2025-06-13T16:31:38.193Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m97ms[39m
+2025-06-13T16:31:38.194Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m99ms[39m
+2025-06-13T16:31:38.281Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m105ms[39m
+2025-06-13T16:31:38.739Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m643ms[39m
+2025-06-13T16:31:38.808Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m630ms[39m
+2025-06-13T16:31:38.907Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [33m404[39m [90m84ms[39m
+2025-06-13T16:31:38.909Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [33m404[39m [90m85ms[39m
+2025-06-13T16:31:38.911Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [33m404[39m [90m86ms[39m
+2025-06-13T16:31:38.915Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m96ms[39m
+2025-06-13T16:31:38.918Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m97ms[39m
+2025-06-13T16:31:54.678Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m101ms[39m
+2025-06-13T16:32:50.215Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m112ms[39m
+2025-06-13T16:33:00.046Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m74ms[39m
+2025-06-13T16:33:24.537Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T16:33:25.546Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T16:33:25.546Z [info]: 📂 Colección Usuarios OK
+2025-06-13T16:33:25.547Z [info]: 📂 Colección Articulos OK
+2025-06-13T16:33:25.548Z [info]: 📂 Colección Pedidos OK
+2025-06-13T16:33:25.548Z [info]: 📂 Colección Categorias OK
+2025-06-13T16:33:25.548Z [info]: 📂 Colección Clientes OK
+2025-06-13T16:33:25.549Z [info]: 📂 Colección Stats OK
+2025-06-13T16:33:25.549Z [info]: 📂 Colección Sales OK
+2025-06-13T16:33:25.551Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T16:33:25.552Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T16:34:04.777Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m78ms[39m
+2025-06-13T16:34:04.779Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m79ms[39m
+2025-06-13T16:34:08.155Z [info]: [90mGET /api/sales[39m [36m304[39m [90m83ms[39m
+2025-06-13T16:34:08.157Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m91ms[39m
+2025-06-13T16:34:08.159Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m85ms[39m
+2025-06-13T16:34:08.236Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m148ms[39m
+2025-06-13T16:34:08.246Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m83ms[39m
+2025-06-13T16:34:08.343Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m179ms[39m
+2025-06-13T16:34:08.671Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m509ms[39m
+2025-06-13T16:34:08.746Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m508ms[39m
+2025-06-13T16:34:08.756Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m77ms[39m
+2025-06-13T16:34:08.758Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m76ms[39m
+2025-06-13T16:34:08.827Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [33m404[39m [90m142ms[39m
+2025-06-13T16:34:08.832Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [33m404[39m [90m78ms[39m
+2025-06-13T16:34:08.851Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [33m404[39m [90m92ms[39m
+2025-06-13T16:34:08.871Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m787ms[39m
+2025-06-13T16:34:08.910Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m81ms[39m
+2025-06-13T16:34:08.912Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [33m404[39m [90m77ms[39m
+2025-06-13T16:34:08.950Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [33m404[39m [90m77ms[39m
+2025-06-13T16:34:08.952Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [33m404[39m [90m99ms[39m
+2025-06-13T16:34:09.000Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m913ms[39m
+2025-06-13T16:34:09.304Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m543ms[39m
+2025-06-13T16:34:11.278Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m78ms[39m
+2025-06-13T16:34:11.279Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m77ms[39m
+2025-06-13T16:34:11.284Z [info]: [90mGET /api/sales[39m [36m304[39m [90m76ms[39m
+2025-06-13T16:34:11.310Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m99ms[39m
+2025-06-13T16:34:11.312Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m101ms[39m
+2025-06-13T16:34:11.313Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m103ms[39m
+2025-06-13T16:34:11.370Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m89ms[39m
+2025-06-13T16:34:11.372Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m92ms[39m
+2025-06-13T16:34:11.413Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m97ms[39m
+2025-06-13T16:34:11.801Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m517ms[39m
+2025-06-13T16:34:11.892Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m575ms[39m
+2025-06-13T16:34:11.894Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [33m404[39m [90m84ms[39m
+2025-06-13T16:34:11.897Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m90ms[39m
+2025-06-13T16:34:11.899Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [33m404[39m [90m87ms[39m
+2025-06-13T16:34:11.901Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m94ms[39m
+2025-06-13T16:34:11.904Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [33m404[39m [90m94ms[39m
+2025-06-13T16:34:11.984Z [info]: [90mGET /api/articulos/673c99489d11056e91b73b4f[39m [33m404[39m [90m75ms[39m
+2025-06-13T16:34:11.986Z [info]: [90mGET /api/articulos/6842487ec216c47e284c5754[39m [33m404[39m [90m77ms[39m
+2025-06-13T16:34:11.987Z [info]: [90mGET /api/articulos/6847a9588b1c3d944ae41897[39m [36m304[39m [90m80ms[39m
+2025-06-13T16:34:11.988Z [info]: [90mGET /api/articulos/673c995c9d11056e91b73b51[39m [33m404[39m [90m80ms[39m
+2025-06-13T16:34:11.989Z [info]: [90mGET /api/articulos/6842430fc216c47e284c5752[39m [36m304[39m [90m85ms[39m
+2025-06-13T16:34:35.699Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m107ms[39m
+2025-06-13T16:35:24.393Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T16:35:25.440Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T16:35:25.440Z [info]: 📂 Colección Usuarios OK
+2025-06-13T16:35:25.441Z [info]: 📂 Colección Articulos OK
+2025-06-13T16:35:25.441Z [info]: 📂 Colección Pedidos OK
+2025-06-13T16:35:25.441Z [info]: 📂 Colección Categorias OK
+2025-06-13T16:35:25.441Z [info]: 📂 Colección Clientes OK
+2025-06-13T16:35:25.442Z [info]: 📂 Colección Stats OK
+2025-06-13T16:35:25.442Z [info]: 📂 Colección Sales OK
+2025-06-13T16:35:25.444Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T16:35:25.445Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T16:54:39.769Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [32m200[39m [90m89ms[39m
+2025-06-13T16:54:39.774Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m91ms[39m
+2025-06-13T16:54:39.777Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m90ms[39m
+2025-06-13T16:54:39.849Z [info]: [90mGET /api/sales[39m [36m304[39m [90m148ms[39m
+2025-06-13T16:54:40.474Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m774ms[39m
+2025-06-13T16:54:40.737Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m1047ms[39m
+2025-06-13T16:54:42.990Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m157ms[39m
+2025-06-13T16:54:42.992Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m168ms[39m
+2025-06-13T16:54:42.995Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m175ms[39m
+2025-06-13T16:54:42.998Z [info]: [90mGET /api/sales[39m [36m304[39m [90m172ms[39m
+2025-06-13T16:54:43.000Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m171ms[39m
+2025-06-13T16:54:43.121Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m111ms[39m
+2025-06-13T16:54:43.123Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m115ms[39m
+2025-06-13T16:54:43.124Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m120ms[39m
+2025-06-13T16:54:43.474Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m644ms[39m
+2025-06-13T16:55:02.985Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T16:55:04.028Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T16:55:04.028Z [info]: 📂 Colección Usuarios OK
+2025-06-13T16:55:04.028Z [info]: 📂 Colección Articulos OK
+2025-06-13T16:55:04.029Z [info]: 📂 Colección Pedidos OK
+2025-06-13T16:55:04.029Z [info]: 📂 Colección Categorias OK
+2025-06-13T16:55:04.029Z [info]: 📂 Colección Clientes OK
+2025-06-13T16:55:04.029Z [info]: 📂 Colección Stats OK
+2025-06-13T16:55:04.029Z [info]: 📂 Colección Sales OK
+2025-06-13T16:55:04.032Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T16:55:04.033Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T16:55:21.467Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m131ms[39m
+2025-06-13T16:55:22.395Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m76ms[39m
+2025-06-13T16:55:22.399Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m77ms[39m
+2025-06-13T16:55:22.402Z [info]: [90mGET /api/sales[39m [36m304[39m [90m78ms[39m
+2025-06-13T16:55:22.479Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m151ms[39m
+2025-06-13T16:55:22.480Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m84ms[39m
+2025-06-13T16:55:22.499Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m96ms[39m
+2025-06-13T16:55:22.865Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m540ms[39m
+2025-06-13T16:55:23.145Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m818ms[39m
+2025-06-13T16:55:47.099Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m122ms[39m
+2025-06-13T16:57:34.087Z [error]: 💥 Error al iniciar el servidor: getaddrinfo ENOTFOUND ac-7id5qsc-shard-00-02.uoxe6ek.mongodb.net
+2025-06-13T17:11:57.449Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:11:58.537Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:11:58.538Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:11:58.539Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:11:58.540Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:11:58.541Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:11:58.542Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:11:58.543Z [info]: 📂 Colección Stats OK
+2025-06-13T17:11:58.543Z [info]: 📂 Colección Sales OK
+2025-06-13T17:11:58.551Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:11:58.551Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:12:06.633Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:12:06.641Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m151ms[39m
+2025-06-13T17:12:06.642Z [info]: [90mGET /api/sales[39m [36m304[39m [90m116ms[39m
+2025-06-13T17:12:06.714Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m182ms[39m
+2025-06-13T17:12:07.137Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m608ms[39m
+2025-06-13T17:12:07.476Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m76ms[39m
+2025-06-13T17:12:07.503Z [info]: [90mGET /api/sales[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:12:07.506Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:12:07.510Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:12:07.513Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m984ms[39m
+2025-06-13T17:12:07.584Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m105ms[39m
+2025-06-13T17:12:07.585Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:12:07.949Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m540ms[39m
+2025-06-13T17:12:08.043Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m630ms[39m
+2025-06-13T17:18:51.458Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m2954ms[39m
+2025-06-13T17:18:51.463Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m2941ms[39m
+2025-06-13T17:18:52.170Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m3638ms[39m
+2025-06-13T17:18:52.236Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m3706ms[39m
+2025-06-13T17:18:52.284Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m819ms[39m
+2025-06-13T17:18:53.085Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m4557ms[39m
+2025-06-13T17:18:53.086Z [info]: [90mGET /api/sales[39m [36m304[39m [90m4562ms[39m
+2025-06-13T17:18:55.655Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m134ms[39m
+2025-06-13T17:22:03.112Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:22:04.421Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:22:04.421Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:22:04.421Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:22:04.422Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:22:04.422Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:22:04.422Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:22:04.422Z [info]: 📂 Colección Stats OK
+2025-06-13T17:22:04.422Z [info]: 📂 Colección Sales OK
+2025-06-13T17:22:04.425Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:22:04.425Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:22:11.157Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:22:11.159Z [info]: [90mGET /api/sales[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:22:11.161Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m84ms[39m
+2025-06-13T17:22:11.242Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m158ms[39m
+2025-06-13T17:22:11.243Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:22:11.584Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m504ms[39m
+2025-06-13T17:22:11.610Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m528ms[39m
+2025-06-13T17:22:13.225Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m97ms[39m
+2025-06-13T17:22:13.228Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:22:13.234Z [info]: [90mGET /api/sales[39m [36m304[39m [90m95ms[39m
+2025-06-13T17:22:13.236Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:22:13.238Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m97ms[39m
+2025-06-13T17:22:13.327Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:22:13.329Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:22:13.330Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:22:13.333Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m85ms[39m
+2025-06-13T17:22:13.334Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:22:13.737Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m595ms[39m
+2025-06-13T17:22:23.745Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:22:24.748Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:22:24.749Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:22:24.749Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:22:24.750Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:22:24.751Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:22:24.751Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:22:24.752Z [info]: 📂 Colección Stats OK
+2025-06-13T17:22:24.752Z [info]: 📂 Colección Sales OK
+2025-06-13T17:22:24.757Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:22:24.758Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:22:26.693Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:22:28.662Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m92ms[39m
+2025-06-13T17:22:28.666Z [info]: [90mGET /api/sales[39m [36m304[39m [90m93ms[39m
+2025-06-13T17:22:28.668Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m107ms[39m
+2025-06-13T17:22:28.767Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m189ms[39m
+2025-06-13T17:22:28.770Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:22:28.775Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:22:28.845Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m167ms[39m
+2025-06-13T17:22:28.854Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m76ms[39m
+2025-06-13T17:22:28.862Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m82ms[39m
+2025-06-13T17:22:29.150Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m575ms[39m
+2025-06-13T17:22:29.153Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m578ms[39m
+2025-06-13T17:25:01.929Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:25:03.223Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:25:03.224Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:25:03.225Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:25:03.226Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:25:03.227Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:25:03.227Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:25:03.228Z [info]: 📂 Colección Stats OK
+2025-06-13T17:25:03.228Z [info]: 📂 Colección Sales OK
+2025-06-13T17:25:03.233Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:25:03.234Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:25:05.318Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:25:05.327Z [info]: [90mGET /api/sales[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:25:05.328Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:25:05.409Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m169ms[39m
+2025-06-13T17:25:05.411Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:25:05.755Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m515ms[39m
+2025-06-13T17:25:05.834Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m592ms[39m
+2025-06-13T17:25:07.321Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m102ms[39m
+2025-06-13T17:25:07.348Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m119ms[39m
+2025-06-13T17:25:07.352Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m123ms[39m
+2025-06-13T17:25:07.354Z [info]: [90mGET /api/sales[39m [36m304[39m [90m127ms[39m
+2025-06-13T17:25:07.357Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m133ms[39m
+2025-06-13T17:25:07.400Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m78ms[39m
+2025-06-13T17:25:07.449Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:25:07.451Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:25:07.461Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m92ms[39m
+2025-06-13T17:25:07.463Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m99ms[39m
+2025-06-13T17:25:07.768Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m539ms[39m
+2025-06-13T17:26:35.527Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:26:36.565Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:26:36.565Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:26:36.565Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:26:36.565Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:26:36.566Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:26:36.566Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:26:36.566Z [info]: 📂 Colección Stats OK
+2025-06-13T17:26:36.566Z [info]: 📂 Colección Sales OK
+2025-06-13T17:26:36.568Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:26:36.568Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:27:19.910Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:27:20.922Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:27:20.922Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:27:20.923Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:27:20.924Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:27:20.924Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:27:20.924Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:27:20.925Z [info]: 📂 Colección Stats OK
+2025-06-13T17:27:20.925Z [info]: 📂 Colección Sales OK
+2025-06-13T17:27:20.930Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:27:20.930Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:27:30.679Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m88ms[39m
+2025-06-13T17:27:30.686Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m84ms[39m
+2025-06-13T17:27:30.695Z [info]: [90mGET /api/sales[39m [36m304[39m [90m80ms[39m
+2025-06-13T17:27:30.794Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m171ms[39m
+2025-06-13T17:27:30.876Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m254ms[39m
+2025-06-13T17:27:31.138Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m518ms[39m
+2025-06-13T17:27:31.179Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m558ms[39m
+2025-06-13T17:27:31.537Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:27:31.547Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:27:31.549Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m88ms[39m
+2025-06-13T17:27:31.551Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:27:31.552Z [info]: [90mGET /api/sales[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:27:31.639Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m100ms[39m
+2025-06-13T17:27:31.640Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:27:31.641Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:27:31.642Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:27:32.069Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m604ms[39m
+2025-06-13T17:27:52.457Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:27:53.437Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:27:53.438Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:27:53.438Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:27:53.438Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:27:53.439Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:27:53.439Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:27:53.439Z [info]: 📂 Colección Stats OK
+2025-06-13T17:27:53.439Z [info]: 📂 Colección Sales OK
+2025-06-13T17:27:53.441Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:27:53.441Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:28:43.124Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:28:44.188Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:28:44.188Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:28:44.189Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:28:44.189Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:28:44.189Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:28:44.189Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:28:44.190Z [info]: 📂 Colección Stats OK
+2025-06-13T17:28:44.190Z [info]: 📂 Colección Sales OK
+2025-06-13T17:28:44.191Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:28:44.191Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:28:55.629Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:28:56.798Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:28:56.799Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:28:56.800Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:28:56.800Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:28:56.801Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:28:56.802Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:28:56.803Z [info]: 📂 Colección Stats OK
+2025-06-13T17:28:56.803Z [info]: 📂 Colección Sales OK
+2025-06-13T17:28:56.809Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:28:56.809Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:29:16.037Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:29:16.039Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:29:16.040Z [info]: [90mGET /api/sales[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:29:16.137Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m172ms[39m
+2025-06-13T17:29:16.369Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m328ms[39m
+2025-06-13T17:29:16.584Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m621ms[39m
+2025-06-13T17:29:16.602Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m642ms[39m
+2025-06-13T17:29:19.289Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m85ms[39m
+2025-06-13T17:29:19.292Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m78ms[39m
+2025-06-13T17:29:19.295Z [info]: [90mGET /api/sales[39m [36m304[39m [90m86ms[39m
+2025-06-13T17:29:19.298Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:29:19.302Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:29:19.384Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m80ms[39m
+2025-06-13T17:29:19.385Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m76ms[39m
+2025-06-13T17:29:19.395Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:29:19.400Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:29:19.402Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:29:19.803Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m586ms[39m
+2025-06-13T17:29:37.214Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:29:39.449Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m99ms[39m
+2025-06-13T17:29:39.452Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m106ms[39m
+2025-06-13T17:29:39.454Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m103ms[39m
+2025-06-13T17:29:39.457Z [info]: [90mGET /api/sales[39m [36m304[39m [90m108ms[39m
+2025-06-13T17:29:39.459Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m106ms[39m
+2025-06-13T17:29:39.460Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m120ms[39m
+2025-06-13T17:29:39.558Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m90ms[39m
+2025-06-13T17:29:39.563Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:29:39.566Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m98ms[39m
+2025-06-13T17:29:39.568Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m102ms[39m
+2025-06-13T17:29:39.644Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m180ms[39m
+2025-06-13T17:30:32.236Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m95ms[39m
+2025-06-13T17:30:45.869Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m79ms[39m
+2025-06-13T17:30:45.871Z [info]: [90mGET /api/sales[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:30:45.873Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m84ms[39m
+2025-06-13T17:30:45.876Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:30:45.878Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:30:45.945Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m154ms[39m
+2025-06-13T17:30:45.962Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:30:45.964Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:30:45.967Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:30:45.969Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m86ms[39m
+2025-06-13T17:30:45.973Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:31:27.108Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m82ms[39m
+2025-06-13T17:32:34.715Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m89ms[39m
+2025-06-13T17:32:34.717Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m88ms[39m
+2025-06-13T17:32:34.718Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:32:34.719Z [info]: [90mGET /api/sales[39m [36m304[39m [90m84ms[39m
+2025-06-13T17:32:34.751Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m113ms[39m
+2025-06-13T17:32:34.798Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m165ms[39m
+2025-06-13T17:32:34.799Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m79ms[39m
+2025-06-13T17:35:28.426Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:35:30.144Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:35:30.145Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:35:30.147Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:35:30.148Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:35:30.149Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:35:30.149Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:35:30.150Z [info]: 📂 Colección Stats OK
+2025-06-13T17:35:30.151Z [info]: 📂 Colección Sales OK
+2025-06-13T17:35:30.158Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:35:30.159Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:35:39.921Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:35:41.208Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:35:41.209Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:35:41.210Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:35:41.211Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:35:41.212Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:35:41.212Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:35:41.213Z [info]: 📂 Colección Stats OK
+2025-06-13T17:35:41.213Z [info]: 📂 Colección Sales OK
+2025-06-13T17:35:41.218Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:35:41.219Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:36:34.658Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:36:35.781Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:36:35.782Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:36:35.783Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:36:35.783Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:36:35.783Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:36:35.784Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:36:35.784Z [info]: 📂 Colección Stats OK
+2025-06-13T17:36:35.784Z [info]: 📂 Colección Sales OK
+2025-06-13T17:36:35.787Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:36:35.787Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:36:50.968Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m122ms[39m
+2025-06-13T17:36:50.974Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m127ms[39m
+2025-06-13T17:36:50.986Z [info]: [90mGET /api/sales[39m [36m304[39m [90m129ms[39m
+2025-06-13T17:36:51.052Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m180ms[39m
+2025-06-13T17:36:51.374Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m378ms[39m
+2025-06-13T17:36:51.745Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m879ms[39m
+2025-06-13T17:36:51.753Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m884ms[39m
+2025-06-13T17:36:52.097Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m158ms[39m
+2025-06-13T17:36:52.107Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m163ms[39m
+2025-06-13T17:36:52.111Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m176ms[39m
+2025-06-13T17:36:52.116Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m176ms[39m
+2025-06-13T17:36:52.118Z [info]: [90mGET /api/sales[39m [36m304[39m [90m180ms[39m
+2025-06-13T17:36:52.292Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m167ms[39m
+2025-06-13T17:36:52.314Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m177ms[39m
+2025-06-13T17:36:52.334Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m202ms[39m
+2025-06-13T17:36:52.339Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m191ms[39m
+2025-06-13T17:36:52.468Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m339ms[39m
+2025-06-13T17:36:52.798Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m859ms[39m
+2025-06-13T17:37:06.130Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m181ms[39m
+2025-06-13T17:37:07.506Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m120ms[39m
+2025-06-13T17:37:07.582Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m190ms[39m
+2025-06-13T17:37:07.655Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m261ms[39m
+2025-06-13T17:37:07.659Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m269ms[39m
+2025-06-13T17:37:44.888Z [info]: [90mOPTIONS /api/pedidos[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:37:45.175Z [info]: [90mPOST /api/pedidos[39m [32m201[39m [90m285ms[39m
+2025-06-13T17:37:45.267Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m78ms[39m
+2025-06-13T17:37:49.188Z [info]: [90mOPTIONS /api/pedidos/684c61e836357c63b0eaef77/estado[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:37:49.288Z [info]: [90mPUT /api/pedidos/684c61e836357c63b0eaef77/estado[39m [32m200[39m [90m97ms[39m
+2025-06-13T17:37:49.375Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m76ms[39m
+2025-06-13T17:37:49.392Z [info]: [90mGET /api/sales[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:37:49.394Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:37:49.404Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m100ms[39m
+2025-06-13T17:37:51.207Z [info]: [90mOPTIONS /api/sales[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:37:51.452Z [info]: [90mPOST /api/sales[39m [32m201[39m [90m244ms[39m
+2025-06-13T17:37:51.538Z [info]: [90mPUT /api/pedidos/684c61e836357c63b0eaef77/estado[39m [32m200[39m [90m80ms[39m
+2025-06-13T17:37:51.632Z [info]: [90mGET /api/sales[39m [32m200[39m [90m82ms[39m
+2025-06-13T17:37:51.635Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m90ms[39m
+2025-06-13T17:37:51.637Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [32m200[39m [90m88ms[39m
+2025-06-13T17:37:51.639Z [info]: [90mGET /api/sales/resumen-mensual[39m [32m200[39m [90m88ms[39m
+2025-06-13T17:37:51.641Z [info]: [90mGET /api/sales/resumen-mensual[39m [32m200[39m [90m86ms[39m
+2025-06-13T17:37:51.643Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [32m200[39m [90m89ms[39m
+2025-06-13T17:37:53.521Z [info]: [90mPUT /api/pedidos/684c61e836357c63b0eaef77/estado[39m [32m200[39m [90m81ms[39m
+2025-06-13T17:37:53.657Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m130ms[39m
+2025-06-13T17:37:53.660Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m130ms[39m
+2025-06-13T17:37:53.663Z [info]: [90mGET /api/sales[39m [36m304[39m [90m130ms[39m
+2025-06-13T17:37:53.664Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m133ms[39m
+2025-06-13T17:37:57.839Z [info]: [90mOPTIONS /api/pedidos/684af9a3fa68ab77afe452bd/estado[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:37:58.002Z [info]: [90mPUT /api/pedidos/684af9a3fa68ab77afe452bd/estado[39m [32m200[39m [90m160ms[39m
+2025-06-13T17:37:58.125Z [info]: [90mGET /api/sales[39m [36m304[39m [90m109ms[39m
+2025-06-13T17:37:58.346Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m335ms[39m
+2025-06-13T17:37:58.349Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m336ms[39m
+2025-06-13T17:37:58.351Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m336ms[39m
+2025-06-13T17:37:59.187Z [info]: [90mOPTIONS /api/pedidos/68476daac9d76fb3d35cb695/estado[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:37:59.280Z [info]: [90mPUT /api/pedidos/68476daac9d76fb3d35cb695/estado[39m [32m200[39m [90m90ms[39m
+2025-06-13T17:37:59.386Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m98ms[39m
+2025-06-13T17:37:59.387Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:37:59.387Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m98ms[39m
+2025-06-13T17:37:59.388Z [info]: [90mGET /api/sales[39m [36m304[39m [90m96ms[39m
+2025-06-13T17:38:00.372Z [info]: [90mOPTIONS /api/pedidos/68437801b2bcd8298248c388/estado[39m [32m204[39m [90m0ms[39m
+2025-06-13T17:38:00.485Z [info]: [90mPUT /api/pedidos/68437801b2bcd8298248c388/estado[39m [32m200[39m [90m111ms[39m
+2025-06-13T17:38:00.579Z [info]: [90mGET /api/pedidos[39m [32m200[39m [90m87ms[39m
+2025-06-13T17:38:00.583Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m88ms[39m
+2025-06-13T17:38:00.587Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m93ms[39m
+2025-06-13T17:38:00.589Z [info]: [90mGET /api/sales[39m [36m304[39m [90m94ms[39m
+2025-06-13T17:38:02.881Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m80ms[39m
+2025-06-13T17:38:02.898Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:38:02.901Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m76ms[39m
+2025-06-13T17:38:02.906Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m78ms[39m
+2025-06-13T17:38:02.908Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m74ms[39m
+2025-06-13T17:38:02.952Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m149ms[39m
+2025-06-13T17:38:02.966Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m84ms[39m
+2025-06-13T17:38:24.271Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:38:24.275Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m75ms[39m
+2025-06-13T17:38:24.278Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m77ms[39m
+2025-06-13T17:38:24.286Z [info]: [90mGET /api/sales[39m [36m304[39m [90m87ms[39m
+2025-06-13T17:38:24.294Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m98ms[39m
+2025-06-13T17:38:24.350Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m148ms[39m
+2025-06-13T17:38:24.351Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m75ms[39m
+2025-06-13T17:38:24.353Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [32m200[39m [90m80ms[39m
+2025-06-13T17:38:24.356Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m76ms[39m
+2025-06-13T17:38:24.370Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m83ms[39m
+2025-06-13T17:38:24.374Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [32m200[39m [90m78ms[39m
+2025-06-13T17:38:33.572Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m85ms[39m
+2025-06-13T17:38:33.575Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m95ms[39m
+2025-06-13T17:38:33.657Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m169ms[39m
+2025-06-13T17:38:33.659Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m174ms[39m
+2025-06-13T17:42:34.257Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:42:35.264Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:42:35.264Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:42:35.265Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:42:35.266Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:42:35.267Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:42:35.267Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:42:35.268Z [info]: 📂 Colección Stats OK
+2025-06-13T17:42:35.268Z [info]: 📂 Colección Sales OK
+2025-06-13T17:42:35.274Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:42:35.274Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:43:54.343Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:43:55.802Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:43:55.803Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:43:55.804Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:43:55.804Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:43:55.805Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:43:55.805Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:43:55.806Z [info]: 📂 Colección Stats OK
+2025-06-13T17:43:55.806Z [info]: 📂 Colección Sales OK
+2025-06-13T17:43:55.812Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:43:55.812Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:44:07.449Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m78ms[39m
+2025-06-13T17:44:07.451Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m84ms[39m
+2025-06-13T17:44:07.452Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m81ms[39m
+2025-06-13T17:44:07.988Z [info]: [90mGET /api/sales[39m [36m304[39m [90m610ms[39m
+2025-06-13T17:44:08.016Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m641ms[39m
+2025-06-13T17:44:10.267Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m126ms[39m
+2025-06-13T17:44:10.271Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m119ms[39m
+2025-06-13T17:44:10.377Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m223ms[39m
+2025-06-13T17:44:10.383Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m228ms[39m
+2025-06-13T17:44:10.445Z [info]: [90mGET /api/sales[39m [36m304[39m [90m172ms[39m
+2025-06-13T17:44:10.463Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m318ms[39m
+2025-06-13T17:44:10.522Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m247ms[39m
+2025-06-13T17:44:10.941Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m785ms[39m
+2025-06-13T17:44:47.845Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:44:48.831Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:44:48.832Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:44:48.833Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:44:48.834Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:44:48.835Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:44:48.835Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:44:48.836Z [info]: 📂 Colección Stats OK
+2025-06-13T17:44:48.836Z [info]: 📂 Colección Sales OK
+2025-06-13T17:44:48.842Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:44:48.843Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:44:53.996Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m91ms[39m
+2025-06-13T17:44:54.001Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m93ms[39m
+2025-06-13T17:44:54.071Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m165ms[39m
+2025-06-13T17:44:54.085Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m170ms[39m
+2025-06-13T17:44:54.090Z [info]: [90mGET /api/sales[39m [36m304[39m [90m86ms[39m
+2025-06-13T17:44:54.174Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m168ms[39m
+2025-06-13T17:44:54.432Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m521ms[39m
+2025-06-13T17:44:54.459Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m546ms[39m
+2025-06-13T17:47:33.593Z [info]: [90mGET /api/sales[39m [36m304[39m [90m98ms[39m
+2025-06-13T17:47:33.598Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m106ms[39m
+2025-06-13T17:47:33.600Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m109ms[39m
+2025-06-13T17:47:33.601Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m135ms[39m
+2025-06-13T17:47:33.602Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m109ms[39m
+2025-06-13T17:48:59.932Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m120ms[39m
+2025-06-13T17:48:59.932Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m115ms[39m
+2025-06-13T17:48:59.933Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m111ms[39m
+2025-06-13T17:48:59.933Z [info]: [90mGET /api/sales[39m [36m304[39m [90m112ms[39m
+2025-06-13T17:49:00.056Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m250ms[39m
+2025-06-13T17:49:00.757Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m112ms[39m
+2025-06-13T17:49:00.909Z [info]: [90mGET /api/sales[39m [36m304[39m [90m261ms[39m
+2025-06-13T17:49:00.910Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m267ms[39m
+2025-06-13T17:49:00.911Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m265ms[39m
+2025-06-13T17:49:01.015Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m370ms[39m
+2025-06-13T17:49:01.076Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m316ms[39m
+2025-06-13T17:49:01.645Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m995ms[39m
+2025-06-13T17:50:11.201Z [info]: [90mGET /api/sales[39m [36m304[39m [90m144ms[39m
+2025-06-13T17:50:11.279Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m240ms[39m
+2025-06-13T17:50:11.280Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m223ms[39m
+2025-06-13T17:50:11.281Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m226ms[39m
+2025-06-13T17:50:11.281Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m224ms[39m
+2025-06-13T17:51:54.934Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:51:56.522Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:51:56.523Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:51:56.524Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:51:56.525Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:51:56.526Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:51:56.526Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:51:56.527Z [info]: 📂 Colección Stats OK
+2025-06-13T17:51:56.527Z [info]: 📂 Colección Sales OK
+2025-06-13T17:51:56.532Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:51:56.532Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:52:51.889Z [info]: 🔧 Creando índices en colecciones...
+2025-06-13T17:52:52.897Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-13T17:52:52.898Z [info]: 📂 Colección Usuarios OK
+2025-06-13T17:52:52.899Z [info]: 📂 Colección Articulos OK
+2025-06-13T17:52:52.899Z [info]: 📂 Colección Pedidos OK
+2025-06-13T17:52:52.900Z [info]: 📂 Colección Categorias OK
+2025-06-13T17:52:52.900Z [info]: 📂 Colección Clientes OK
+2025-06-13T17:52:52.901Z [info]: 📂 Colección Stats OK
+2025-06-13T17:52:52.901Z [info]: 📂 Colección Sales OK
+2025-06-13T17:52:52.906Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-13T17:52:52.906Z [info]: 🔗 URL: http://localhost:3005
+2025-06-13T17:52:53.619Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m133ms[39m
+2025-06-13T17:52:53.621Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m127ms[39m
+2025-06-13T17:52:53.622Z [info]: [90mGET /api/sales[39m [36m304[39m [90m134ms[39m
+2025-06-13T17:52:54.071Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m574ms[39m
+2025-06-13T17:52:54.429Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m930ms[39m
+2025-06-13T17:52:55.493Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m100ms[39m
+2025-06-13T17:52:55.495Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m101ms[39m
+2025-06-13T17:52:55.499Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m109ms[39m
+2025-06-13T17:52:55.506Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m122ms[39m
+2025-06-13T17:52:55.587Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m200ms[39m
+2025-06-13T17:52:55.604Z [info]: [90mGET /api/sales[39m [36m304[39m [90m103ms[39m
+2025-06-13T17:52:55.686Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m182ms[39m
+2025-06-13T17:52:56.040Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m644ms[39m
+2025-06-13T17:57:56.003Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m4423ms[39m
+2025-06-13T17:57:56.024Z [info]: [90mGET /api/sales[39m [36m304[39m [90m4458ms[39m
+2025-06-13T17:57:56.113Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m3057ms[39m
+2025-06-13T17:57:56.154Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m4572ms[39m
+2025-06-13T17:57:58.856Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m2847ms[39m
+2025-06-13T17:58:03.204Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m6034ms[39m
+2025-06-13T17:58:03.550Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m6385ms[39m
+2025-06-13T17:58:05.075Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m13495ms[39m
+2025-06-13T17:58:24.491Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m32910ms[39m
+2025-06-13T17:59:38.992Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m493ms[39m
+2025-06-13T17:59:47.067Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m2986ms[39m
+2025-06-13T17:59:48.835Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m4752ms[39m
+2025-06-13T17:59:50.366Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m11876ms[39m
+2025-06-13T18:00:17.121Z [info]: [90mOPTIONS /api/articulos/674f4474f82c2e2599b0d333[39m [32m204[39m [90m1ms[39m
+2025-06-13T18:00:17.240Z [info]: [90mDELETE /api/articulos/674f4474f82c2e2599b0d333[39m [32m204[39m [90m116ms[39m
+2025-06-13T18:00:19.296Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m1638ms[39m
+2025-06-13T18:00:22.361Z [info]: [90mOPTIONS /api/articulos/68421639620e1874e55db6c4[39m [32m204[39m [90m0ms[39m
+2025-06-13T18:00:22.458Z [info]: [90mDELETE /api/articulos/68421639620e1874e55db6c4[39m [32m204[39m [90m94ms[39m
+2025-06-13T18:00:24.625Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m1758ms[39m
+2025-06-13T18:00:26.912Z [info]: [90mOPTIONS /api/articulos/6732908c11f413cfca922a40[39m [32m204[39m [90m1ms[39m
+2025-06-13T18:00:27.004Z [info]: [90mDELETE /api/articulos/6732908c11f413cfca922a40[39m [32m204[39m [90m89ms[39m
+2025-06-13T18:00:29.462Z [info]: [90mOPTIONS /api/articulos/6732908211f413cfca922a3f[39m [32m204[39m [90m0ms[39m
+2025-06-13T18:00:29.471Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m2058ms[39m
+2025-06-13T18:00:29.549Z [info]: [90mDELETE /api/articulos/6732908211f413cfca922a3f[39m [32m204[39m [90m85ms[39m
+2025-06-13T18:00:31.327Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m1371ms[39m
+2025-06-13T18:00:32.261Z [info]: [90mOPTIONS /api/articulos/6732907911f413cfca922a3e[39m [32m204[39m [90m0ms[39m
+2025-06-13T18:00:32.349Z [info]: [90mDELETE /api/articulos/6732907911f413cfca922a3e[39m [32m204[39m [90m86ms[39m
+2025-06-13T18:00:35.145Z [info]: [90mOPTIONS /api/articulos/6732906011f413cfca922a3d[39m [32m204[39m [90m0ms[39m
+2025-06-13T18:00:35.290Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m2532ms[39m
+2025-06-13T18:00:35.305Z [info]: [90mDELETE /api/articulos/6732906011f413cfca922a3d[39m [32m204[39m [90m159ms[39m
+2025-06-13T18:00:36.834Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m1122ms[39m
+2025-06-13T18:00:37.980Z [info]: [90mOPTIONS /api/articulos/67320d727b8667dacc29b7fa[39m [32m204[39m [90m1ms[39m
+2025-06-13T18:00:38.064Z [info]: [90mDELETE /api/articulos/67320d727b8667dacc29b7fa[39m [32m204[39m [90m81ms[39m
+2025-06-13T18:00:42.107Z [info]: [90mGET /api/articulos[39m [32m200[39m [90m3632ms[39m
+2025-06-13T18:00:46.013Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m1739ms[39m
+2025-06-13T18:00:46.015Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m1737ms[39m
+2025-06-13T18:00:46.034Z [info]: [90mGET /api/sales[39m [36m304[39m [90m1755ms[39m
+2025-06-13T18:00:46.053Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m1775ms[39m
+2025-06-13T18:00:47.166Z [info]: [90mGET /api/stats/ventas[39m [32m200[39m [90m1150ms[39m
+2025-06-13T18:00:47.173Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m1156ms[39m
+2025-06-13T18:00:47.175Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m1140ms[39m
+2025-06-13T18:00:48.015Z [info]: [90mGET /api/stats/ventas[39m [32m200[39m [90m3732ms[39m
+2025-06-13T18:00:48.045Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m3766ms[39m
+2025-06-13T18:00:49.072Z [info]: [90mGET /api/categorias[39m [36m304[39m [90m108ms[39m
+2025-06-13T18:01:05.508Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m86ms[39m
+2025-06-13T18:01:05.510Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m84ms[39m
+2025-06-13T18:01:05.511Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m80ms[39m
+2025-06-13T18:01:05.513Z [info]: [90mGET /api/stats/articulos-mas-vendidos[39m [36m304[39m [90m79ms[39m
+2025-06-13T18:01:05.514Z [info]: [90mGET /api/stats/ventas[39m [36m304[39m [90m78ms[39m
+2025-06-13T18:01:12.948Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m78ms[39m
+2025-06-13T18:01:12.983Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m110ms[39m
+2025-06-13T18:01:13.075Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m204ms[39m
+2025-06-13T18:05:06.366Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m5748ms[39m
+2025-06-13T18:05:06.573Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m5955ms[39m
+2025-06-13T18:05:06.611Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m6015ms[39m
+2025-06-13T18:05:07.190Z [info]: [90mGET /api/clientes[39m [36m304[39m [90m4083ms[39m
+2025-06-13T18:05:07.319Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m4209ms[39m
+2025-06-13T18:05:07.796Z [info]: [90mGET /api/sales/ultimos-7-dias[39m [36m304[39m [90m4683ms[39m
+2025-06-13T18:05:07.798Z [info]: [90mGET /api/sales/resumen-mensual[39m [36m304[39m [90m4683ms[39m
+2025-06-13T18:05:09.620Z [info]: [90mGET /api/sales[39m [36m304[39m [90m6505ms[39m
+2025-06-13T18:05:10.566Z [info]: [90mGET /api/articulos[39m [36m304[39m [90m7449ms[39m
+2025-06-13T18:05:10.854Z [info]: [90mGET /api/pedidos[39m [36m304[39m [90m10236ms[39m
+2025-06-13T18:05:12.611Z [info]: [90mGET /api/sales[39m [36m304[39m [90m11995ms[39m

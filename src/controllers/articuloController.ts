@@ -31,12 +31,20 @@ export const obtenerArticulos = async (
 
 export const obtenerArticuloById = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const articulo = await articuloService.obtenerArticuloById(req.params.id);
-    res.status(200).json(articulo);
+    const articuloId = req.params.id;
+    console.log(`[articuloController] Buscando artículo con ID: ${articuloId}`);
+    const articulo = await articuloService.obtenerArticuloById(articuloId);
+    if (articulo) {
+      console.log(`[articuloController] ✓ Artículo encontrado: ${articuloId} - Nombre: "${articulo.nombre}"`);
+      res.status(200).json(articulo);
+    } else {
+      console.log(`[articuloController] ✗ Artículo NO encontrado: ${articuloId}`);
+      res.status(404).json({ message: `Artículo con ID ${articuloId} no encontrado` });
+    }
   } catch (error) {
+    console.error(`[articuloController] Error al buscar artículo con ID ${req.params.id}:`, error);
     next(error);
   }
-  
 }
 // Actualizar un artículo por ID
 export const actualizarArticulo = async ( req: Request, res: Response, next: NextFunction ) => {

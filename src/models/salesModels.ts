@@ -76,25 +76,20 @@ export class SalesModel {
         // Buscar el pedido
         const pedido = await pedidosCollection.findOne({ _id: new ObjectId(pedidoId), activo: true });
         if (!pedido) throw new Error('Pedido no encontrado');
-        // Calcular el total si no existe
-        let total = pedido.total;
-        if (typeof total !== 'number') {
-            if (Array.isArray(pedido.detalles)) {
-                total = pedido.detalles.reduce((acc, det) => {
-                    if (typeof det.subtotal === 'number') return acc + det.subtotal;
-                    if (typeof det.cantidad === 'number' && typeof det.precioUnitario === 'number') {
-                        return acc + det.cantidad * det.precioUnitario;
-                    }
-                    return acc;
-                }, 0);
-            } else {
-                total = 0;
-            }
+        // Calcular el total siempre desde los detalles (más robusto)
+        let total = 0;
+        if (Array.isArray(pedido.detalles)) {
+            total = pedido.detalles.reduce((acc, det) => {
+                if (typeof det.cantidad === 'number' && typeof det.precioUnitario === 'number') {
+                    return acc + det.cantidad * det.precioUnitario;
+                }
+                return acc;
+            }, 0);
         }
-        // Cambiar estado a 'completado' y actualizar fecha
+        // Cambiar estado a 'completado' y actualizar fecha y total
         await pedidosCollection.updateOne(
             { _id: new ObjectId(pedidoId) },
-            { $set: { estado: 'completado', fechaActualizacion: new Date() } }
+            { $set: { estado: 'completado', fechaActualizacion: new Date(), total } }
         );
         // Insertar venta en la colección de ventas
         const venta = {
