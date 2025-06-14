@@ -6,8 +6,9 @@ import * as statsService from '../services/statsService';
 // Obtener estadísticas de ventas
 export const obtenerEstadisticasVentas = async (req: Request, res: Response) => {
   try {
-    const totalVentas = await statsService.obtenerEstadisticasVentas();
-    res.status(200).json({ totalVentas });
+    const estadisticas = await statsService.obtenerEstadisticasVentas();
+    // El servicio ahora devuelve un objeto con totalVentas y desglosePedidos
+    res.status(200).json(estadisticas); 
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener las estadísticas de ventas', error });
   }

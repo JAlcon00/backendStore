@@ -1,7 +1,15 @@
 import { statsModel } from "../models/statsModels";
 
 export const obtenerEstadisticasVentas = async () => {
-  return statsModel.obtenerEstadisticasVentas();
+  const estadisticas = await statsModel.obtenerEstadisticasVentas();
+  // Asegurarse de que el frontend reciba un objeto con totalVentas
+  // y opcionalmente el desglose si se quiere usar en el frontend.
+  if (typeof estadisticas === 'number') {
+    // Caso antiguo donde solo se devolvía el número
+    return { totalVentas: estadisticas, desglosePedidos: [] };
+  }
+  // Caso nuevo donde se devuelve un objeto con totalVentas y desglosePedidos
+  return estadisticas; 
 };
 
 export const obtenerArticulosMasVendidos = async () => {

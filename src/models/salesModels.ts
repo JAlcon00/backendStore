@@ -76,7 +76,7 @@ export class SalesModel {
         // Buscar el pedido
         const pedido = await pedidosCollection.findOne({ _id: new ObjectId(pedidoId), activo: true });
         if (!pedido) throw new Error('Pedido no encontrado');
-        // Calcular el total siempre desde los detalles (más robusto)
+        // Calcular el total siempre desde los detalles (más robusto) y multiplicar por 10
         let total = 0;
         if (Array.isArray(pedido.detalles)) {
             total = pedido.detalles.reduce((acc, det) => {
@@ -84,7 +84,7 @@ export class SalesModel {
                     return acc + det.cantidad * det.precioUnitario;
                 }
                 return acc;
-            }, 0);
+            }, 0) * 100; // Multiplicar por 100 para convertir correctamente a pesos
         }
         // Cambiar estado a 'completado' y actualizar fecha y total
         await pedidosCollection.updateOne(

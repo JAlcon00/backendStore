@@ -10,10 +10,28 @@ export class statsModel {
     const resultadoAgregacion = await pedidosCollection.aggregate([
       { $match: { estado: 'completado' } },
       {
+        $addFields: {
+          totalPedido: {
+            $multiply: [
+              {
+                $sum: {
+                  $map: {
+                    input: '$detalles',
+                    as: 'detalle',
+                    in: { $multiply: ['$$detalle.cantidad', '$$detalle.precioUnitario'] }
+                  }
+                }
+              },
+              100  // Multiplicar por 100 para convertir correctamente a pesos
+            ]
+          }
+        }
+      },
+      {
         $group: {
           _id: null,
-          totalGeneralVentas: { $sum: '$total' },
-          pedidosConsiderados: { $push: { pedidoId: '$_id', totalPedido: '$total', fecha: '$fechaCreacion' } }
+          totalGeneralVentas: { $sum: '$totalPedido' },
+          pedidosConsiderados: { $push: { pedidoId: '$_id', totalPedido: '$totalPedido', fecha: '$fechaCreacion' } }
         }
       },
       {
