@@ -104,12 +104,41 @@ export const logout = (req: Request, res: Response): void => {
 };
 
 // Obtener información del usuario autenticado
-export const me = (req: Request, res: Response): void => {
-    // @ts-ignore
-    if (req.session && req.session.user) {
+export const me = async (req: Request, res: Response): Promise<void> => {
+    try {
         // @ts-ignore
-        res.status(200).json({ usuario: req.session.user });
-    } else {
-        res.status(401).json({ error: 'No autenticado' });
+        if (req.session && req.session.user) {
+            // @ts-ignore
+            const sessionUser = req.session.user;
+            
+            // Si es un cliente, obtener la información completa
+            if (sessionUser.tipo === 'cliente') {
+                const cliente = await ClienteModel.obtenerPorId(sessionUser.id);
+                
+                if (cliente) {
+                    res.status(200).json({ 
+                        usuario: {
+                            id: cliente._id,
+                            nombre: cliente.nombre,
+                            apellido: cliente.apellido,
+                            email: cliente.email,
+                            telefono: cliente.telefono,
+                            direccion: cliente.direccion,
+                            rfc: cliente.rfc
+                        }
+                    });
+                } else {
+                    res.status(401).json({ error: 'Cliente no encontrado' });
+                }
+            } else {
+                // Para usuarios administradores, devolver solo la información básica
+                res.status(200).json({ usuario: sessionUser });
+            }
+        } else {
+            res.status(401).json({ error: 'No autenticado' });
+        }
+    } catch (error) {
+        console.error('Error en /auth/me:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
     }
 };
