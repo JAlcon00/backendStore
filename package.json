@@ -5,7 +5,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "seed:admin": "ts-node src/scripts/seedAdmin.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "seed:admin": "ts-node src/scripts/seedAdmin.ts",
+    "test:auth": "ts-node src/scripts/testAuth.ts"
   },
   "engines": {
     "node": ">=18.18.0 <20"
@@ -15,7 +17,10 @@
   "description": "",
   "dependencies": {
     "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.2",
     "@types/multer": "^1.4.12",
+    "@types/passport": "^1.0.17",
+    "@types/passport-local": "^1.0.38",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -25,6 +30,7 @@
     "dotnet": "^1.1.4",
     "express": "^4.21.1",
     "express-rate-limit": "^7.4.1",
+    "express-session": "^1.18.1",
     "express-winston": "^4.2.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
@@ -32,10 +38,13 @@
     "mongoose": "^8.8.0",
     "morgan": "^1.10.0",
     "multer": "^2.0.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "winston": "^3.17.0",
-    "winston-daily-rotate-file": "^5.0.0"
+    "winston-daily-rotate-file": "^5.0.0",
+    "zod": "^3.25.64"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

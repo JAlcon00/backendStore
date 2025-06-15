@@ -1,5 +1,8 @@
 import { ObjectId } from "mongodb";
 import { getClienteCollection } from '../config/db.config';
+import bcrypt from 'bcrypt';
+
+const SALT_ROUNDS = 12;
 
 // Interfaz para el modelo de Cliente
 export interface ICliente {
@@ -7,6 +10,7 @@ export interface ICliente {
     nombre: string;
     apellido: string;
     email: string;
+    password?: string; // Opcional para casos donde no se requiera
     telefono: string;
     direccion: string;
     rfc?: string;
@@ -122,5 +126,67 @@ export class ClienteModel {
             email, 
             activo: true 
         }) as Promise<ICliente | null>;
+    }
+
+    // Método para login de clientes
+    static async login(email: string, password: string): Promise<ICliente | null> {
+        console.log('[ClienteModel] Conectando a la colección: Cliente');
+        const collection = await getClienteCollection();
+        const cliente = await collection.findOne({ email, activo: true });
+        
+        if (!cliente || !cliente.password) {
+            return null;
+        }
+
+        const passwordValida = await bcrypt.compare(password, cliente.password);
+        if (!passwordValida) {
+            return null;
+        }
+
+        return cliente as ICliente;
+    }
+
+    // Método para cambiar contraseña de cliente
+    static async cambiarPassword(id: string, nuevaPassword: string): Promise<boolean> {
+        console.log('[ClienteModel] Conectando a la colección: Cliente');
+        const collection = await getClienteCollection();
+        const hashPassword = await bcrypt.hash(nuevaPassword, SALT_ROUNDS);
+        
+        const resultado = await collection.updateOne(
+            { _id: new ObjectId(id) },
+            { 
+                $set: { 
+                    password: hashPassword,
+                    fechaActualizacion: new Date()
+                } 
+            }
+        );
+        return resultado.modifiedCount > 0;
+    }
+
+    // Método para registrar cliente con contraseña
+    static async registrar(cliente: Omit<ICliente, '_id' | 'fechaCreacion' | 'fechaActualizacion' | 'activo'> & { password: string }): Promise<ICliente> {
+        console.log('[ClienteModel] Conectando a la colección: Cliente');
+        const collection = await getClienteCollection();
+        
+        // Verificar si el email ya existe
+        const existeEmail = await collection.findOne({ email: cliente.email, activo: true });
+        if (existeEmail) {
+            throw new Error('El email ya está registrado');
+        }
+
+        // Encriptar contraseña
+        const hashPassword = await bcrypt.hash(cliente.password, SALT_ROUNDS);
+
+        const nuevoCliente = {
+            ...cliente,
+            password: hashPassword,
+            fechaCreacion: new Date(),
+            fechaActualizacion: new Date(),
+            activo: true
+        };
+        
+        const resultado = await collection.insertOne(nuevoCliente);
+        return { ...nuevoCliente, _id: resultado.insertedId } as ICliente;
     }
 }

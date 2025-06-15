@@ -1,4 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
+import session from 'express-session';
+import passport from './middleware/passport';
 import logger from './utils/logger';
 import expressWinston from 'express-winston';
 import cors from 'cors';
@@ -23,6 +25,8 @@ import pedidoRoutes from './routes/pedidoRoutes';
 import statsRoutes from './routes/statsRoutes';
 import salesRoutes from './routes/salesRoutes';
 import usuarioRoutes from './routes/usuarioRoutes';
+import authRoutes from './routes/authRoutes';
+import protectedRoutes from './routes/protectedRoutes';
 
 const PORT = process.env.PORT || 3005;
 const app = express();
@@ -51,15 +55,35 @@ app.use(cors({
     // Permite todo para compatibilidad, o puedes devolver un error si quieres restringir
     return callback(null, true);
   },
-  // credentials: true, // Descomenta solo si usas cookies/autenticación
+  credentials: true, // Habilitamos cookies para las sesiones
 }));
+
 app.use(express.json());
+
+// Configuración de sesiones
+app.use(session({
+  secret: 'tu_secreto_super_seguro_para_sesiones_2025', // En producción, usa una variable de entorno
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false, // En producción con HTTPS, cambiar a true
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 24 horas
+  }
+}));
+
+// Inicializar Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/uploads/articulos', express.static(path.join(__dirname, '../uploads/articulos')));
 
 // Swagger
 setupSwagger(app);
 
 // Montar rutas de la API
+app.use('/api/auth', authRoutes); // Nueva ruta de autenticación
+// app.use('/api/protected', protectedRoutes); // Rutas protegidas de ejemplo - comentadas temporalmente
 app.use('/api/articulos', articuloRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/clientes', clienteRoutes);

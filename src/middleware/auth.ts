@@ -1,7 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecreto';
+// Cargar variables de entorno
+dotenv.config();
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+// Verificar que JWT_SECRET esté configurado
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET no está configurado en las variables de entorno');
+}
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers['authorization'];
@@ -10,7 +19,7 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
   }
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET as string);
     // @ts-ignore
     req.usuario = decoded;
     next();
@@ -31,4 +40,13 @@ export function requireRole(roles: string[]) {
     }
     next();
   };
+}
+
+/**
+ * Genera un token JWT para un usuario
+ */
+export function generateToken(payload: any): string {
+  return jwt.sign(payload, JWT_SECRET as string, { 
+    expiresIn: '24h' // El token expira en 24 horas
+  });
 }
