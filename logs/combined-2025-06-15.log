@@ -1,0 +1,35 @@
+2025-06-15T06:42:05.076Z [info]: 🔧 Creando índices en colecciones...
+2025-06-15T06:42:05.928Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-15T06:42:05.929Z [info]: 📂 Colección Usuarios OK
+2025-06-15T06:42:05.930Z [info]: 📂 Colección Articulos OK
+2025-06-15T06:42:05.931Z [info]: 📂 Colección Pedidos OK
+2025-06-15T06:42:05.932Z [info]: 📂 Colección Categorias OK
+2025-06-15T06:42:05.932Z [info]: 📂 Colección Clientes OK
+2025-06-15T06:42:05.933Z [info]: 📂 Colección Stats OK
+2025-06-15T06:42:05.934Z [info]: 📂 Colección Sales OK
+2025-06-15T06:42:05.939Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-15T06:42:05.940Z [info]: 🔗 URL: http://localhost:3005
+2025-06-15T06:43:52.564Z [info]: [90mGET /api-docs[39m [36m301[39m [90m18ms[39m
+2025-06-15T06:43:52.581Z [info]: [90mGET /api-docs/[39m [32m200[39m [90m8ms[39m
+2025-06-15T06:43:52.637Z [info]: [90mGET /api-docs/swagger-ui-init.js[39m [32m200[39m [90m5ms[39m
+2025-06-15T06:43:52.650Z [info]: [90mGET /api-docs/swagger-ui.css[39m [32m200[39m [90m33ms[39m
+2025-06-15T06:43:52.720Z [info]: [90mGET /api-docs/swagger-ui-standalone-preset.js[39m [32m200[39m [90m90ms[39m
+2025-06-15T06:43:52.855Z [info]: [90mGET /api-docs/swagger-ui-bundle.js[39m [32m200[39m [90m218ms[39m
+2025-06-15T06:43:53.218Z [info]: [90mGET /api-docs/favicon-32x32.png[39m [32m200[39m [90m3ms[39m
+2025-06-15T06:43:57.911Z [info]: [90mGET /api-docs/[39m [36m304[39m [90m2ms[39m
+2025-06-15T06:43:58.073Z [info]: [90mGET /api-docs/swagger-ui.css[39m [36m304[39m [90m3ms[39m
+2025-06-15T06:43:58.083Z [info]: [90mGET /api-docs/swagger-ui-bundle.js[39m [36m304[39m [90m3ms[39m
+2025-06-15T06:43:58.092Z [info]: [90mGET /api-docs/swagger-ui-standalone-preset.js[39m [36m304[39m [90m11ms[39m
+2025-06-15T06:43:58.242Z [info]: [90mGET /api-docs/swagger-ui-init.js[39m [36m304[39m [90m0ms[39m
+2025-06-15T06:54:29.759Z [info]: [90mGET /api/clientes[39m [32m200[39m [90m75ms[39m
+2025-06-15T07:01:19.812Z [info]: 🔧 Creando índices en colecciones...
+2025-06-15T07:01:20.645Z [info]: 🔍 Probando conexión a colecciones…
+2025-06-15T07:01:20.645Z [info]: 📂 Colección Usuarios OK
+2025-06-15T07:01:20.646Z [info]: 📂 Colección Articulos OK
+2025-06-15T07:01:20.647Z [info]: 📂 Colección Pedidos OK
+2025-06-15T07:01:20.648Z [info]: 📂 Colección Categorias OK
+2025-06-15T07:01:20.649Z [info]: 📂 Colección Clientes OK
+2025-06-15T07:01:20.650Z [info]: 📂 Colección Stats OK
+2025-06-15T07:01:20.651Z [info]: 📂 Colección Sales OK
+2025-06-15T07:01:20.656Z [info]: 🚀 Servidor corriendo en puerto 3005
+2025-06-15T07:01:20.657Z [info]: 🔗 URL: http://localhost:3005

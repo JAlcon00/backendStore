@@ -8,11 +8,11 @@ const SALT_ROUNDS = 12;
 export interface ICliente {
     _id?: ObjectId;
     nombre: string;
-    apellido: string;
+    apellido?: string;
     email: string;
     password?: string; // Opcional para casos donde no se requiera
-    telefono: string;
-    direccion: string;
+    telefono?: string;
+    direccion?: string;
     rfc?: string;
     fechaCreacion: Date;
     fechaActualizacion: Date;

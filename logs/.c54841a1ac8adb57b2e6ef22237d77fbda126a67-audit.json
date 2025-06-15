@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\pablo\\Documents\\backendStore\\logs\\.c54841a1ac8adb57b2e6ef22237d77fbda126a67-audit.json",
+    "files": [
+        {
+            "date": 1749962828353,
+            "name": "C:\\Users\\pablo\\Documents\\backendStore\\logs\\combined-2025-06-14.log",
+            "hash": "4c9f70888b6bf78feb0d3b944a6b3df54d2ae69280304425f15a8d901473deee"
+        },
+        {
+            "date": 1749969722620,
+            "name": "C:\\Users\\pablo\\Documents\\backendStore\\logs\\combined-2025-06-15.log",
+            "hash": "b63d63605776f0a12b49af4f43e603a4f3c03b082f4d821175b2ebf7fafa09e1"
+        }
+    ],
+    "hashType": "sha256"
+}

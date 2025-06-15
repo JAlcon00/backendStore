@@ -328,3 +328,6 @@
 2025-06-15T02:32:01.014Z [info]: 📂 Colección Sales OK
 2025-06-15T02:32:01.019Z [info]: 🚀 Servidor corriendo en puerto 3005
 2025-06-15T02:32:01.020Z [info]: 🔗 URL: http://localhost:3005
+2025-06-15T04:47:10.038Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.undefined
+2025-06-15T04:47:50.511Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.undefined
+2025-06-15T04:48:46.204Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.localhost

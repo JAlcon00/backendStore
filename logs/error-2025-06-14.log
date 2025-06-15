@@ -1,0 +1,3 @@
+2025-06-15T04:47:10.038Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.undefined
+2025-06-15T04:47:50.511Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.undefined
+2025-06-15T04:48:46.204Z [error]: 💥 Error al iniciar el servidor: querySrv ENOTFOUND _mongodb._tcp.localhost
